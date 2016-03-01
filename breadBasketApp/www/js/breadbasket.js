@@ -1,4 +1,4 @@
-var app = angular.module("BreadBasket", ["ionic", "ngMessages", "ngPassword", "ui.bootstrap", "doowb.angular-pusher", "ngMap"])
+var app = angular.module("BreadBasket", ["ionic", "ngMessages", "ngPassword", "ui.bootstrap", "doowb.angular-pusher"])
 
 	.run(function($ionicPlatform) {
 		$ionicPlatform.ready(function() {
