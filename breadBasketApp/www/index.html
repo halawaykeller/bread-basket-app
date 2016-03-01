@@ -19,9 +19,12 @@
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
-    <script src="js/app-old.js"></script>
+    <script src="js/breadbasket.js"></script>
+    <script src="js/directives/js-utils.js"></script>
+    <!--custom directive to template the rest of the app's js-->
+    <js-utils></js-utils>
   </head>
-  <body ng-app="starter">
+  <body ng-app="BreadBasket">
 
     <ion-pane>
       <ion-header-bar class="bar-stable">
@@ -36,7 +39,7 @@
           <label class="item item-input">
             <input type="password" placeholder="Password">
           </label>
-          <button class="button button-block button-positive">Submit</button>
+          <button ng-controller="SigninController" class="button button-block button-positive">Submit</button>
         </div>
 
 
