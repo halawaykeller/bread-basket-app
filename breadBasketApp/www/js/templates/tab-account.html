@@ -1,0 +1,23 @@
+<ion-view view-title="My Account">
+	<ion-content class="padding">
+		<div class="list">
+			<a class="item item-icon-left" href="#">
+				<i class="icon ion-home"></i>
+				My Organization
+			</a>
+			<i class="icon ion-chevron-right icon-accessory"></i>
+
+			<div class="item item-divider">
+				My Volunteers
+			</div>
+		</div>
+		<!--Shows the volunteers in that organization-->
+		<ion-list>
+			<ion-item ng-repeat="volunteer in volunteers" type="item-text-wrap" href="#tab/account/{{volunteer.volId}}">
+				<h2>{{volunteer.volFirstName}} {{volunteer.volLastName}}</h2>
+				<i class="icon ion-chevron-right icon-accessory"></i>
+			</ion-item>
+		</ion-list>
+
+	</ion-content>
+</ion-view>
