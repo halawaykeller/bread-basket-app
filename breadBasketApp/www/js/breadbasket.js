@@ -17,3 +17,53 @@ var app = angular.module("BreadBasket", ["ionic", "ngMessages", "ngPassword", "u
 			}
 		});
 	})
+	.config(function($stateProvider, $urlRouterProvider){
+		$stateProvider
+				.state('login', {
+					url: '/login',
+					templateUrl: 'js/templates/login.html'
+				})
+				.state('tab', {
+					url: '/tab',
+					abstract: true,
+					templateUrl: 'templates/tabs.html'
+				})
+				.state('tab.organization', {
+					url: '/organization',
+					views: {
+						'tab-organization': {
+							templateUrl: 'templates/tab-organization.html',
+							controller: 'OrganizationController'
+						}
+					}
+				})
+				.state('tab.volunteers', {
+					url: '/volunteers',
+					views: {
+						'tab-volunteers': {
+							templateUrl: 'templates/tab-volunteers.html',
+							controller: 'VolunteerController'
+						}
+					}
+				})
+				.state('tab.listings', {
+					url: '/listings',
+					views: {
+						'tab-listings': {
+							templateUrl: 'templates/tab-listings.html',
+							controller: 'ListingController'
+						}
+					}
+				})
+				.state('tab.dashboard', {
+					url: '/dashboard',
+					views: {
+						'tab-dashboard': {
+							templateUrl: 'templates/tab-dashboard.html'
+						}
+					}
+				});
+
+				$urlRouterProvider.otherwise('/login');
+
+	});

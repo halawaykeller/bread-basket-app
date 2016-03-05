@@ -20,10 +20,10 @@ app.controller("SigninController", ["$scope", "$uibModal", "$window", "AlertServ
 												if(result.data.status === 200) {
 													if(result.data.data.orgType === "G") {
 														//giving admin
-														$window.location.assign("../../php/template/login-landing-giver.php")
+														$window.location.assign("/tabs")
 													} else if(result.data.data.orgType === "R") {
 														//receiving admin
-														$window.location.assign("../../php/template/login-landing-page.php")
+														$window.location.assign("/tabs")
 													}
 												} else {
 													$scope.alerts[0] = {type: "danger", msg: result.message};
@@ -31,7 +31,7 @@ app.controller("SigninController", ["$scope", "$uibModal", "$window", "AlertServ
 											});
 									} else {
 										//receiving volunteer
-										$window.location.assign("../../php/template/listing-nonadmin.php")
+										$window.location.assign("/tabs")
 									}
 								} else {
 									$scope.alerts[0] = {type: "danger", msg: result.message};
