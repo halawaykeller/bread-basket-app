@@ -2,7 +2,7 @@ app.controller("SigninController", ["$scope", "$uibModal", "$window", "AlertServ
 	$scope.signinData = {};
 	$scope.alerts = [];
 
-	$scope.openSigninModal = function(signinData)  {
+	$scope.submitSigninData = function(signinData)  {
 			$scope.signinData = signinData;
 			SigninService.signin(signinData)
 				.then(function(result) {
