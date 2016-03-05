@@ -15,7 +15,6 @@ app.service("SigninService", function($http){
 		//this is TOTALLY a hack, and it's terrible and wrong and we shouldn't do it
 		return($http.get(this.GET_ENDPOINT))
 				.then(function (){
-					console.log("got something");
 					return($http.post("/php/controllers/sign-in-controller.php", signinData)
 							.then(function(reply) {
 								return(reply.data);

@@ -1,10 +1,11 @@
 app.controller("SigninController", ["$scope", "$uibModal", "$window", "AlertService", "SigninService", "GetCurrentService", function($scope, $uibModal, $window, AlertService, SigninService, GetCurrentService) {
-	$scope.signinData = {};
+	//$scope.signinData = {};
 	$scope.alerts = [];
 
-	$scope.submitSigninData = function(signinData)  {
-			$scope.signinData = signinData;
-			SigninService.signin(signinData)
+	$scope.submitSigninData = function(data)  {
+			console.log(data);
+			$scope.signinData = data;
+			SigninService.signin(data)
 				.then(function(result) {
 					if(result.status === 200) {
 						$scope.alerts[0] = {type: "success", msg: result.message};
