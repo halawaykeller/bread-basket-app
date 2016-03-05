@@ -9,6 +9,15 @@
       {
       	"path": "/php/api/organization/",
       	"proxyUrl": "https://breadbasketapp.com/php/api/organization/"
+      },
+      {
+      	"path": "/php/api/volunteer/",
+      	"proxyUrl": "https://breadbasketapp.com/php/api/volunteer/"
+      },
+      {
+      	"path": "/php/api/organization/",
+      	"proxyUrl": "https://breadbasketapp.com/php/api/organization/"
       }
+
     ]
 }
