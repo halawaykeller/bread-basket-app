@@ -2,17 +2,7 @@ app.controller("SigninController", ["$scope", "$uibModal", "$window", "AlertServ
 	$scope.signinData = {};
 	$scope.alerts = [];
 
-	$scope.openSigninModal = function() {
-		var signinModalInstance = $uibModal.open({
-			templateUrl: "../../js/views/signin-modal.php",
-			controller: "SigninModal",
-			resolve: {
-				signinData: function() {
-					return ($scope.signinData);
-				}
-			}
-		});
-		signinModalInstance.result.then(function(signinData) {
+	$scope.openSigninModal = function(signinData)  {
 			$scope.signinData = signinData;
 			SigninService.signin(signinData)
 				.then(function(result) {
@@ -54,8 +44,7 @@ app.controller("SigninController", ["$scope", "$uibModal", "$window", "AlertServ
 				});
 		}, function() {
 			$scope.signinData = {};
-		});
-	};
+		};
 
 	$scope.openSigninFailModal = function() {
 		var SignInFailInstance = $uibModal.open({

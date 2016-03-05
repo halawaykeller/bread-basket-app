@@ -94,10 +94,10 @@
         <!--LOGIN PAGE BEGINS-->
         <div class="list">
           <label class="item item-input">
-            <input type="email" placeholder="Email">
+            <input type="email" ng-model="signinData.email" placeholder="Email">
           </label>
           <label class="item item-input">
-            <input type="password" placeholder="Password">
+            <input type="password" ng-model="signinData.password" placeholder="Password">
           </label>
           <button ng-controller="SigninController" ng-click="openSigninModal();" class="button button-block button-positive">Submit</button>
         </div>
