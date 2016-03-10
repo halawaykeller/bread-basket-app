@@ -26,13 +26,13 @@ var app = angular.module("BreadBasket", ["ionic", "ngMessages", "ngPassword", "u
 				.state('tab', {
 					url: '/tab',
 					abstract: true,
-					templateUrl: 'templates/tabs.html'
+					templateUrl: 'js/templates/tabs.html'
 				})
 				.state('tab.organization', {
 					url: '/organization',
 					views: {
 						'tab-organization': {
-							templateUrl: 'templates/tab-organization.html',
+							templateUrl: 'js/templates/tab-organization.html',
 							controller: 'OrganizationController'
 						}
 					}
@@ -41,7 +41,7 @@ var app = angular.module("BreadBasket", ["ionic", "ngMessages", "ngPassword", "u
 					url: '/volunteers',
 					views: {
 						'tab-volunteers': {
-							templateUrl: 'templates/tab-volunteers.html',
+							templateUrl: 'js/templates/tab-volunteers.html',
 							controller: 'VolunteerController'
 						}
 					}
@@ -50,7 +50,7 @@ var app = angular.module("BreadBasket", ["ionic", "ngMessages", "ngPassword", "u
 					url: '/listings',
 					views: {
 						'tab-listings': {
-							templateUrl: 'templates/tab-listings.html',
+							templateUrl: 'js/templates/tab-listings.html',
 							controller: 'ListingController'
 						}
 					}
@@ -59,7 +59,7 @@ var app = angular.module("BreadBasket", ["ionic", "ngMessages", "ngPassword", "u
 					url: '/dashboard',
 					views: {
 						'tab-dashboard': {
-							templateUrl: 'templates/tab-dashboard.html'
+							templateUrl: 'js/templates/tab-dashboard.html'
 						}
 					}
 				});
