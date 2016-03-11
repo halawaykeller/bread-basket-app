@@ -8,11 +8,10 @@
 //"signinService refers to what's in the signin-controller. 
 app.service("SigninService", function($http){
 	//this.SIGNIN_ENDPOINT = "/php/controllers/sign-in-controller.php";
-	this.GET_ENDPOINT = "/php/api/organization/";
+	this.GET_ENDPOINT = "/php/controllers/landing-controller.php/";
 
 	this.signin = function(signinData) { //signinData from the signin-controller and signin-modal
-		//get request for the sole purpose of obtaining a cookie
-		//this is TOTALLY a hack, and it's terrible and wrong and we shouldn't do it
+		//make request to the landing controller to get the xsrf token
 		return($http.get(this.GET_ENDPOINT))
 				.then(function (){
 					return($http.post("/php/controllers/sign-in-controller.php", signinData)

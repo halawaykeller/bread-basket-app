@@ -21,7 +21,10 @@
       {
       	"path": "/php/api/listing/",
       	"proxyUrl": "https://breadbasketapp.com/php/api/listing/"
+      },
+      {
+      	"path": "/php/controllers/landing-controller.php",
+      	"proxyUrl": "https://breadbasketapp.com/php/controllers/landing-controller.php"
       }
-
     ]
 }
