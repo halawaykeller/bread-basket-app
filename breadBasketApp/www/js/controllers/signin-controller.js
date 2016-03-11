@@ -1,4 +1,4 @@
-app.controller("SigninController", ["$scope", "$uibModal", "$window", "AlertService", "SigninService", "GetCurrentService", function($scope, $uibModal, $window, AlertService, SigninService, GetCurrentService) {
+app.controller("SigninController", ["$scope", "$uibModal", "$window", "$state", "AlertService", "SigninService", "GetCurrentService", function($scope, $uibModal, $window, $state, AlertService, SigninService, GetCurrentService) {
 	//$scope.signinData = {};
 	$scope.alerts = [];
 
@@ -20,10 +20,10 @@ app.controller("SigninController", ["$scope", "$uibModal", "$window", "AlertServ
 												if(result.data.status === 200) {
 													if(result.data.data.orgType === "G") {
 														//giving admin
-														$window.location.assign("/tabs")
+														$window.location.assign("/foozy")
 													} else if(result.data.data.orgType === "R") {
 														//receiving admin
-														$window.location.assign("/tabs")
+														$state.go('tab.dashboard');
 													}
 												} else {
 													$scope.alerts[0] = {type: "danger", msg: result.message};
@@ -31,7 +31,7 @@ app.controller("SigninController", ["$scope", "$uibModal", "$window", "AlertServ
 											});
 									} else {
 										//receiving volunteer
-										$window.location.assign("/tabs")
+										$window.location.assign("/renly")
 									}
 								} else {
 									$scope.alerts[0] = {type: "danger", msg: result.message};
