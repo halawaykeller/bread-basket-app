@@ -10,12 +10,6 @@
 				</div>
 			</label>
 			</div>
-			<!--organization clickable list item-->
-			<a class="item item-icon-left" href="#">
-				<i class="icon ion-home"></i>
-				My Organization
-			</a>
-			<i class="icon ion-chevron-right icon-accessory"></i>
 			<!--volunteers list-->
 			<div class="item item-divider">
 				My Volunteers
@@ -23,7 +17,7 @@
 		</div>
 		<!--Shows the volunteers in that organization-->
 		<ion-list>
-			<ion-item ng-repeat="volunteer in volunteers" type="item-text-wrap" href="#tab/account/{{volunteer.volId}}">
+			<ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="volunteer in volunteers" type="item-text-wrap" href="#tab/volunteer-detail/{{volunteer.volId}}">
 				<h2>{{volunteer.volFirstName}} {{volunteer.volLastName}}</h2>
 				<i class="icon ion-chevron-right icon-accessory"></i>
 			</ion-item>
