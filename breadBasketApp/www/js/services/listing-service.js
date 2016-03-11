@@ -1,4 +1,4 @@
-app.constant("LISTING_ENDPOINT", "https://breadbasketapp.com/php/api/listing/");
+app.constant("LISTING_ENDPOINT", "/php/api/listing/");
 app.service("ListingService", function($http,LISTING_ENDPOINT) {
 	//INTERNAL FUNCTION FOR HOLDING THE URL
 	function getUrl() {

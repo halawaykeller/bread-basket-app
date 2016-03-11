@@ -1,4 +1,4 @@
-app.controller("OrganizationController", ["$scope", "OrganizationService", "GetCurrentService", "$uibModal", "NgMap",  function($scope, OrganizationService, GetCurrentService, $uibModal, NgMap) {
+app.controller("OrganizationController", ["$scope", "OrganizationService", "GetCurrentService", "$uibModal",  function($scope, OrganizationService, GetCurrentService, $uibModal) {
 	//add as needed
 
 	//the organization for the view will be the first element in this array
@@ -175,11 +175,11 @@ app.controller("OrganizationController", ["$scope", "OrganizationService", "GetC
 		});
 	};
 
-	NgMap.getMap().then(function(map) {
-		console.log(map.getCenter());
-		console.log('markers', map.markers);
-		console.log('shapes', map.shapes);
-	});
+	//NgMap.getMap().then(function(map) {
+	//	console.log(map.getCenter());
+	//	console.log('markers', map.markers);
+	//	console.log('shapes', map.shapes);
+	//});
 }]);
 
 //modal instance controller for deletion prompt
