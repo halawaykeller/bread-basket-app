@@ -175,6 +175,8 @@ app.controller("OrganizationController", ["$scope", "OrganizationService", "GetC
 		});
 	};
 
+	$scope.getCurrentOrganization();
+
 	//NgMap.getMap().then(function(map) {
 	//	console.log(map.getCenter());
 	//	console.log('markers', map.markers);
