@@ -1,4 +1,4 @@
-app.controller("VolDetailController", ["$scope", "$stateParams", "VolunteerService", function($scope, $stateParams, VolunteerService) {
+app.controller("VolDetailController", ["$scope", "$state", "$stateParams", "VolunteerService", function($scope, $state, $stateParams, VolunteerService) {
 
 	var volId = $stateParams.volId;
 
@@ -19,7 +19,12 @@ app.controller("VolDetailController", ["$scope", "$stateParams", "VolunteerServi
 
 		console.log(volunteer);
 
-		VolunteerService.update($scope.volunteer.volId, $scope.volunteer);
+		VolunteerService.update($scope.volunteer.volId, $scope.volunteer)
+
+		.then(function() {
+			$state.go('tab.volunteers', {reload: true});
+
+		});
 
 
 				//.then(function(result) {
