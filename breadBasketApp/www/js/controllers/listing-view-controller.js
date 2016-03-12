@@ -1,5 +1,5 @@
 
-app.controller("ListingViewController", ["$scope", "$stateParams", "ListingService", "GetCurrentService", "OrganizationService", "ListingTypeService", "VolunteerService", "Pusher", function($scope, $stateParams, ListingService, GetCurrentService, OrganizationService, ListingTypeService, VolunteerService, Pusher) {
+app.controller("ListingViewController", ["$scope", "$stateParams", "ListingService", function($scope, $stateParams, ListingService) {
 
     ListingService.all().then(function(result){
         if(result.data.status === 200) {
