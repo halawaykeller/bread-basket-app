@@ -6,23 +6,23 @@ app.controller("OrganizationController", ["$scope", "OrganizationService", "GetC
 	$scope.savedOrganization = "";
 	$scope.alerts = [];
 	$scope.redirectUrl = "";
-	$scope.isEditing = true;
+	//$scope.isEditing = true;
 
 
-	$scope.setEditedOrganization = function() {
-		$scope.isEditing = true;
-		//set the back-up to reset upon cancellation of the edit
-		$scope.savedOrganization = angular.copy($scope.organization);
-	};
-
-	/**
-	 * cancels editing and clears out the misquote being edited
-	 **/
-	$scope.cancelEditing = function() {
-		$scope.isEditing = false;
-		//set the back-up to reset to upon cancellation
-		$scope.organization = angular.copy($scope.savedOrganization);
-	};
+	//$scope.setEditedOrganization = function() {
+	//	$scope.isEditing = true;
+	//	//set the back-up to reset upon cancellation of the edit
+	//	$scope.savedOrganization = angular.copy($scope.organization);
+	//};
+	//
+	///**
+	// * cancels editing and clears out the misquote being edited
+	// **/
+	//$scope.cancelEditing = function() {
+	//	$scope.isEditing = false;
+	//	//set the back-up to reset to upon cancellation
+	//	$scope.organization = angular.copy($scope.savedOrganization);
+	//};
 
 	$scope.getOrganizations = function() {
 		OrganizationService.all()

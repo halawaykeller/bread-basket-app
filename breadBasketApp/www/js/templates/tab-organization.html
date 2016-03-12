@@ -1,9 +1,33 @@
-<ion-view view-title="Organization">
+<ion-view view-title="{{organization.orgName}}">
 	<ion-content class="padding">
-		<ion-list>
-			<ion-item>
-				<h2> {{organization.orgName}} Fuzzy!</h2>
-			</ion-item>
-		</ion-list>
+		<div class="list">
+			<a class="item item-icon-left item-icon-right" href="#">
+				<i class="icon ion-clock"></i>
+				{{organization.orgHours}}
+				<i class="icon ion-chevron-right icon-accessory"></i>
+			</a>
+
+			<a class="item item-icon-left item-icon-right" href="#">
+				<i class="icon ion-ios-telephone"></i>
+				{{organization.orgPhone}}
+				<i class="icon ion-chevron-right icon-accessory"></i>
+			</a>
+			<a class="item item-icon-left item-icon-right" href="#">
+				<i class="icon ion-edit"></i>
+				Edit My Address
+				<i class="icon ion-chevron-right icon-accessory"></i>
+			</a>
+
+		</div>
+
+		<div class="card">
+			<div class="item item-text-wrap">
+				<h2> {{organization.orgAddress1}}</h2>
+				<h2> {{organization.orgAddress2}}</h2>
+				{{organization.orgCity}}, {{organization.orgState}}
+				<h2> {{organization.orgZip}}</h2>
+			</div>
+		</div>
+
 	</ion-content>
 </ion-view>
