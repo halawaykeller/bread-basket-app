@@ -1,6 +1,8 @@
 
 app.controller("ListingViewController", ["$scope", "$stateParams", "ListingService", "OrganizationService", "ListingTypeService", "GetCurrentService", "Pusher", function($scope, $stateParams, ListingService, OrganizationService, ListingTypeService, GetCurrentService, Pusher) {
 
+    var orgCurrent;
+
     $scope.listing = {};
     $scope.organization = {};
     $scope.listingType = {};
@@ -28,24 +30,25 @@ app.controller("ListingViewController", ["$scope", "$stateParams", "ListingServi
         }
     });
 
+    GetCurrentService.fetchOrgCurrent().then(function(result){
+        if(result.data.status === 200) {
+            orgCurrent = result.data.data.orgId;
+        }
+    });
+
+    $scope.returnCurrentOrg = function() {
+        return orgCurrent;
+    };
+
 
     $scope.claimListing = function(){
         //get current organization ID
         var listing = $scope.listing;
-        GetCurrentService.fetchOrgCurrent()
-           .then(function(result) {
+        listing.listingClaimedBy = orgCurrent;
+        ListingService.update(listing.listingId, listing)
+           .then(function(result) { //need some form of positive feedback here, since alerts don't work
                if(result.data.status === 200) {
-                   //$scope.alerts[0] = {type: "success", msg: result.data.message};
-                   //set the organization ID in the listing claimed by field
-                   listing.listingClaimedBy = result.data.data.orgId;
-                   ListingService.update(listing.listingId, listing)
-                      .then(function(result) { //need some form of positive feedback here, since alerts don't work
-                          if(result.data.status === 200) {
-                              //$scope.alerts[0] = {type: "success", msg: "Listing Claimed"};
-                          } else {
-                              //$scope.alerts[0] = {type: "danger", msg: result.data.message};
-                          }
-                      });
+                   //$scope.alerts[0] = {type: "success", msg: "Listing Claimed"};
                } else {
                    //$scope.alerts[0] = {type: "danger", msg: result.data.message};
                }
