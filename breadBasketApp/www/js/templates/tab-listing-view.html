@@ -1,14 +1,23 @@
-<ion-view view-title="Placeholder">
-    <!--Listings-->
+<ion-view view-title="Listing Details">
     <ion-content class="padding">
-        <ion-list>
-            <ion-view view-title="{{ listing.listingMemo }}">
-                <ion-content class="padding">
-                    <p>
-                        {{ listing.listingPostTime | date : 'short'}}
-                    </p>
-                    </ion-content>
-            </ion-view>
-        </ion-list>
+        <h3>
+            {{listing.listingMemo}}
+        </h3>
+        <h3>
+            Posted On: {{listing.listingPostTime | date: 'short'}}
+        </h3>
+        <h3>
+            {{listingType.listingTypeInfo}}
+        </h3>
+        <h3>
+            Location: {{organization.orgAddress1}} {{organization.orgAddress2}} {{organization.orgCity}} {{organization.orgState}} {{organization.orgZip}}
+        </h3>
+        <h3>
+            Hours: {{organization.orgHours}}
+        </h3>
+        <h3>
+            Phone: {{organization.orgPhone}}
+        </h3>
+
     </ion-content>
 </ion-view>

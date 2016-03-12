@@ -3,7 +3,6 @@ app.controller("SigninController", ["$scope", "$uibModal", "$window", "$state", 
 	$scope.alerts = [];
 
 	$scope.submitSigninData = function(data)  {
-			console.log(data);
 			$scope.signinData = data;
 			SigninService.signin(data)
 				.then(function(result) {
