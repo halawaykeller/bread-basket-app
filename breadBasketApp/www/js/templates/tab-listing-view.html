@@ -1,21 +1,26 @@
-<!--<ion-view view-title="Listings">-->
-    <!--&lt;!&ndash;Listings&ndash;&gt;-->
-    <!--<div class="item item-divider">-->
-        <!--Listings-->
-    <!--</div>-->
-    <!--<ion-content class="padding">-->
-        <!--<ion-list>-->
-            <!--<div class="item item-button-right">-->
-                <!--<ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="listing in listings" type="item-text-wrap" href="#/tab/listings/{{listing.id}}">-->
-                    <!--<main ng-controller="ListingController">&lt;!&ndash;right?  SHOULDN'T need another controller...&ndash;&gt;-->
-                        <!--<div class="container">-->
-                            <!--<listing-view ng-hide="isEditing"></listing-view>-->
-                            <!--<listing-edit ng-show="isEditing"></listing-edit>-->
-                        <!--</div>-->
-                    <!--</main>-->
-            <!--</div>-->
+<ion-view view-title="Listings">
+    <!--Listings-->
+    <div class="item item-divider">
+        Listings
+    </div>
+    <ion-content class="padding">
+        <ion-list>
+            <div class="item item-button-right">
+                <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="listing in listings" type="item-text-wrap" href="#/tab/listings/{{listing.id}}">
+                    <main ng-controller="ListingController"><!--right?  SHOULDN'T need another controller...-->
+                        <div class="container">
+                            <listing-view ng-hide="isEditing"></listing-view>
+                            <listing-edit ng-show="isEditing"></listing-edit>
+                        </div>
+                    </main>
+            </div>
 
-            <!--</ion-item>-->
-        <!--</ion-list>-->
-    <!--</ion-content>-->
-<!--</ion-view>-->
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
+
+
+
+??????????????/
+/{{listing.id}}
