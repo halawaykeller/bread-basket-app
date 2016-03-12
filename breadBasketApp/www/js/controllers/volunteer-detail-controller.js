@@ -1,5 +1,5 @@
-app.controller("VolDetailController", function($scope, $state, VolunteerService) {
+app.controller("VolDetailController", function($scope, $stateParams, VolunteerService) {
 
-
+	$scope.volunteer = VolunteerService.all();
 
 });

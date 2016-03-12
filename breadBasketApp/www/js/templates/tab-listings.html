@@ -10,7 +10,7 @@
 				<h2>{{ listing.listingMemo }}</h2>
 				<p>{{ listing.listingPostTime | date : 'short' }}</p>
 
-				<button class="button-right button button-balanced" ng-hide="listing.listingClaimedBy" href="#/tab/listing-view" >
+				<button class="button button-balanced" ng-hide="listing.listingClaimedBy" href="#/tab/listing-view" >
 					VIEW
 				</button>
 				<button class="button button-energized" ng-show="listing.listingClaimedBy">

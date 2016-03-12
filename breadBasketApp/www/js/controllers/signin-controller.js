@@ -20,7 +20,7 @@ app.controller("SigninController", ["$scope", "$uibModal", "$window", "$state", 
 												if(result.data.status === 200) {
 													if(result.data.data.orgType === "G") {
 														//giving admin
-														$window.location.assign("/foozy")
+														$state.go('tab.dashboard');
 													} else if(result.data.data.orgType === "R") {
 														//receiving admin
 														$state.go('tab.dashboard');
@@ -31,7 +31,7 @@ app.controller("SigninController", ["$scope", "$uibModal", "$window", "$state", 
 											});
 									} else {
 										//receiving volunteer
-										$window.location.assign("/renly")
+										$state.go('tab.dashboard');
 									}
 								} else {
 									$scope.alerts[0] = {type: "danger", msg: result.message};
