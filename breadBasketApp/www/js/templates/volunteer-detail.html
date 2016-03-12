@@ -10,22 +10,22 @@
 		<div class="list">
 			<label class="item item-input item-floating-label">
 				<span class="input-label">First Name</span>
-				<input ng-model="volunteer.volFirstname" type="text" placeholder="{{volunteer.volFirstName}}">
+				<input ng-model="volunteer.volFirstName" type="text" placeholder="{{volunteer.volFirstName}}">
 			</label>
 			<label class="item item-input item-floating-label">
 				<span class="input-label">Last Name</span>
-				<input type="text" placeholder="{{volunteer.volLastName}}">
+				<input ng-model="volunteer.volLastName" type="text" placeholder="{{volunteer.volLastName}}">
 			</label>
 			<label class="item item-input item-floating-label">
 				<span class="input-label">Email</span>
-				<input type="text" placeholder="{{volunteer.volEmail}}">
+				<input ng-model="volunteer.volEmail" type="text" placeholder="{{volunteer.volEmail}}">
 			</label>
 			<label class="item item-input item-floating-label">
 				<span class="input-label">Phone</span>
-				<input type="text" placeholder="{{volunteer.volPhone}}">
+				<input ng-model="volunteer.volPhone" type="text" placeholder="{{volunteer.volPhone}}">
 			</label>
 		</div>
-		<button class="button button-full button-positive" ng-click="submitVolunteer();">
+		<button class="button button-full button-positive" ng-click="submitVolunteer(volunteer);">
 			Submit
 		</button>
 
