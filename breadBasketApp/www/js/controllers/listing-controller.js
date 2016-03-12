@@ -1,4 +1,4 @@
-app.controller("ListingController", ["$scope", "$uibModal", "ListingService", "AlertService", "GetCurrentService", "OrganizationService", "ListingTypeService", "VolunteerService", "Pusher", function($scope, $uibModal, ListingService, AlertService, GetCurrentService, OrganizationService, ListingTypeService, VolunteerService, Pusher) {
+app.controller("ListingController", ["$scope", "ListingService", "AlertService", "GetCurrentService", "OrganizationService", "ListingTypeService", "VolunteerService", "Pusher", function($scope, ListingService, AlertService, GetCurrentService, OrganizationService, ListingTypeService, VolunteerService, Pusher) {
 	$scope.editedListing = {};
 	$scope.organization = {};
 	$scope.listingType = {};
