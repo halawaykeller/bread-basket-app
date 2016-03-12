@@ -18,6 +18,9 @@
         <h3>
             Phone: {{organization.orgPhone}}
         </h3>
-        <button class="button button-balanced" ng-click="claimListing();">Claim Listing</button>
+        <!--ng-hide this and show a "listing claimed" button after claiming-->
+        <button ng-hide="listing.listingClaimedBy" class="button button-balanced" ng-click="claimListing();">Claim Listing</button>
+        <button ng-show="listing.listingClaimedBy" class="button button-energized" ng-click="unclaimListing();">Unclaim Listing</button>
+        <!--givers are going to have to be able to click this to see claimer details later-->
     </ion-content>
 </ion-view>

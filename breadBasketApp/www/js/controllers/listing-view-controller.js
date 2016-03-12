@@ -39,7 +39,7 @@ app.controller("ListingViewController", ["$scope", "$stateParams", "ListingServi
                    //set the organization ID in the listing claimed by field
                    listing.listingClaimedBy = result.data.data.orgId;
                    ListingService.update(listing.listingId, listing)
-                      .then(function(result) {
+                      .then(function(result) { //need some form of positive feedback here, since alerts don't work
                           if(result.data.status === 200) {
                               //$scope.alerts[0] = {type: "success", msg: "Listing Claimed"};
                           } else {
@@ -47,11 +47,17 @@ app.controller("ListingViewController", ["$scope", "$stateParams", "ListingServi
                           }
                       });
                } else {
-                   $scope.alerts[0] = {type: "danger", msg: result.data.message};
+                   //$scope.alerts[0] = {type: "danger", msg: result.data.message};
                }
-               ////update angulars copy for dynamic table updates
-               //$scope.listing[$scope.index] = listing;
-               //$scope.index = null;
+           });
+    };
+
+    $scope.unclaimListing = function() {
+        var listing = $scope.listing;//make sure angular's copy is being updated
+        listing.listingClaimedBy = null;
+        ListingService.update(listing.listingId, listing)
+           .then(function(result){
+               //nothing for now; need user feedback here
            });
     };
 
