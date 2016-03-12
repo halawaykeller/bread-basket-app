@@ -1,15 +1,14 @@
-<ion-view view-title="{{listing.detail}}">
+<ion-view view-title="Placeholder">
     <!--Listings-->
     <ion-content class="padding">
         <ion-list>
-            <ion-list>
             <ion-view view-title="{{ listing.listingMemo }}">
                 <ion-content class="padding">
                     <p>
                         {{ listing.listingPostTime | date : 'short'}}
                     </p>
-
-
+                    </ion-content>
+            </ion-view>
         </ion-list>
     </ion-content>
 </ion-view>

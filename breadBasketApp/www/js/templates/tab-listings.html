@@ -3,7 +3,7 @@
 	<ion-content class="padding">
 		<ion-list>
 
-			<ion-item class="item item-button-right" ng-repeat="listing in listings| orderBy: '-listingPostTime'" type="item-text-wrap" href="#/tab/listings/{{listing.id}}">
+			<ion-item class="item item-button-right" ng-repeat="listing in listings| orderBy: '-listingPostTime'" type="item-text-wrap" href="#/tab/listings/{{listing.listingId}}">
 				<h2>{{ listing.listingMemo }}</h2>
 				<p>{{ listing.listingPostTime | date : 'short' }}</p>
 
