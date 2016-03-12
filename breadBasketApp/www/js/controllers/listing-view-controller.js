@@ -1,5 +1,5 @@
 
-app.controller("ListingViewController", ["$scope", "$stateParams", "ListingService", "OrganizationService", "ListingTypeService", "GetCurrentService", function($scope, $stateParams, ListingService, OrganizationService, ListingTypeService, GetCurrentService) {
+app.controller("ListingViewController", ["$scope", "$stateParams", "ListingService", "OrganizationService", "ListingTypeService", "GetCurrentService", "Pusher", function($scope, $stateParams, ListingService, OrganizationService, ListingTypeService, GetCurrentService, Pusher) {
 
     $scope.listing = {};
     $scope.organization = {};
@@ -60,5 +60,22 @@ app.controller("ListingViewController", ["$scope", "$stateParams", "ListingServi
                //nothing for now; need user feedback here
            });
     };
+
+    /**
+     * START PUSHER METHODS
+     */
+
+        //subscribe to the update channel; this will update the listings
+    Pusher.subscribe("listing", "update", function(listing){
+       if($scope.listing.listingId === listing.listingId) {
+           $scope.listing = listing;
+       }
+    });
+
+    //when the window is closed/reloaded, gracefully close the channel
+    $scope.$on("$destroy", function() {
+        Pusher.unsubscribe("listings");
+    });
+
 
 }]);
