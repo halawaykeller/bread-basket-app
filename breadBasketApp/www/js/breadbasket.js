@@ -67,9 +67,9 @@ var app = angular.module("BreadBasket", ["ionic", "ngMessages", "ngPassword", "u
 				.state('tab.listing-view', {
 					url: '/listing-view',
 					views: {
-						'tab-listings': {
+						'tab-listing-view': {
 							templateUrl: 'js/templates/tab-listing-view.html',
-							controller: 'ListingController'
+							controller: 'ListingViewController'
 						}
 					}
 				})
