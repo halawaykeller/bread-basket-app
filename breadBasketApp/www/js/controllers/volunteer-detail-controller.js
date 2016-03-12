@@ -1,5 +1,5 @@
-app.controller('VolDetailController', function($scope, $stateParams, VolunteerService) {
+app.controller("VolDetailController", function($scope, $stateParams, VolunteerService) {
 
 
-		$scope.volunteer = VolunteerService.fetchId($stateParams.volId);
+		$scope.volunteers = VolunteerService.fetchId($stateParams.volId);
 });
