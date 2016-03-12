@@ -1,23 +1,12 @@
 <ion-view view-title="Volunteers">
 	<ion-content class="padding">
-		<div class="list">
-			<!--push notifications toggle button-->
-			<div class="item">
-			<label class="toggle">
-				<input type="checkbox">
-				<div class="track">
-					<div class="handle"></div>
-				</div>
-			</label>
-			</div>
 			<!--volunteers list-->
 			<div class="item item-divider">
 				My Volunteers
 			</div>
-		</div>
 		<!--Shows the volunteers in that organization-->
 		<ion-list>
-			<ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="volunteer in volunteers" type="item-text-wrap" href="#tab/volunteers/{{volunteer.volId}}">
+			<ion-item class="item item-icon-right" ng-repeat="volunteer in volunteers" type="item-text-wrap" href="#tab/volunteers/{{volunteer.volId}}">
 				<h2>{{volunteer.volFirstName}} {{volunteer.volLastName}}</h2>
 				<i class="icon ion-chevron-right icon-accessory"></i>
 			</ion-item>

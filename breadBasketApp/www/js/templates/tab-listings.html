@@ -1,24 +1,23 @@
 <ion-view view-title="Listings">
 	<!--Listings-->
+	<ion-content class="padding">
 	<div class="item item-divider">
 		Listings
 	</div>
-	<ion-content class="padding">
 		<ion-list>
-			<div class="item item-button-right">
-			<ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="listing in listings" type="item-text-wrap" href="#/tab/listings/{{listing.id}}">
+
+			<ion-item class="item item-button-right" ng-repeat="listing in listings" type="item-text-wrap" href="#/tab/listings/{{listing.id}}">
 				<h2>{{ listing.listingMemo }}</h2>
 				<p>{{ listing.listingPostTime | date : 'short' }}</p>
 
-				<button class="button button-balanced button-large" ng-hide="listing.listingClaimedBy" href="#/tab/listing-view" >
+				<button class="button-right button button-balanced" ng-hide="listing.listingClaimedBy" href="#/tab/listing-view" >
 					VIEW
 				</button>
-				<button class="button button-energized button-large" ng-show="listing.listingClaimedBy">
+				<button class="button button-energized" ng-show="listing.listingClaimedBy">
 					CLAIMED
 				</button>
-				</div>
-
 			</ion-item>
+
 		</ion-list>
 	</ion-content>
 </ion-view>
