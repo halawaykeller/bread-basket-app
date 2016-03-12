@@ -1,8 +1,20 @@
 <ion-view view-title="Listings">
+	<!--Listings-->
+	<div class="item item-divider">
+		Listings
+	</div>
 	<ion-content class="padding">
 		<ion-list>
-			<ion-item ng-repeat="listing in listings" type="item-text-wrap" href="#/tab/listing/{{listing.listingId}}">
-			<h2>{{listing.listingMemo}} fuzzy</h2>
+			<div class="item item-button-right">
+			<ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="listing in listings" type="item-text-wrap" href="#/tab/listings/{{listing.id}}">
+				<h2>{{ listing.listingMemo }}</h2>
+				<p>{{ listing.listingPostTime | date : 'short' }}</p>
+
+				<button class="button button-balanced">
+					VIEW
+				</button>
+				</div>
+
 			</ion-item>
 		</ion-list>
 	</ion-content>
