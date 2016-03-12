@@ -6,7 +6,7 @@ app.controller("OrganizationController", ["$scope", "OrganizationService", "GetC
 	$scope.savedOrganization = "";
 	$scope.alerts = [];
 	$scope.redirectUrl = "";
-	$scope.isEditing = false;
+	$scope.isEditing = true;
 
 
 	$scope.setEditedOrganization = function() {
