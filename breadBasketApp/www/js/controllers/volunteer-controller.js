@@ -3,6 +3,14 @@ app.controller("VolunteerController", ["$scope", "VolunteerService", "AlertServi
 	$scope.alerts = [];
 	$scope.volunteers = [];
 
+	$scope.shouldShowDelete = false;
+
+
+	$scope.showDeleteButtons = function() {
+
+		$scope.shouldShowDelete = true;
+
+	}
 
 	/**
 	 * START METHOD: CREATE/POST

@@ -1,4 +1,18 @@
 <ion-view view-title="Listings">
+
+	<ion-nav-buttons side="primary">
+		<!--this button shows the delete buttons in the ion list-->
+		<button class="button" ng-click="doSomething()">
+			delete
+			<i class="icon ion-ios-minus-outline"></i>
+		</button>
+		<!--this button creates a modal to add a new listing-->
+		<button class="button" ng-click="doSomething()">
+			new
+			<i class="icon ion-ios-plus-outline"></i>
+		</button>
+
+	</ion-nav-buttons>
 	<!--Listings-->
 	<ion-content class="padding">
 		<ion-list>
