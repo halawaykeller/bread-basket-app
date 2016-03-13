@@ -1,10 +1,9 @@
-app.controller("VolunteerController", ["$scope", "VolunteerService", "AlertService", function($scope, VolunteerService, AlertService) {
+app.controller("VolunteerController", ["$scope","VolunteerService", "AlertService", "$ionicModal", function($scope, VolunteerService, $ionicModal) {
 	$scope.index = null;
 	$scope.alerts = [];
 	$scope.volunteers = [];
 
 	$scope.shouldShowDelete = false;
-
 
 	/** shows delete buttons in ion list **/
 
@@ -12,15 +11,21 @@ app.controller("VolunteerController", ["$scope", "VolunteerService", "AlertServi
 
 		$scope.shouldShowDelete = true;
 
-	}
+	};
+
+	$scope.hideDeleteButtons = function() {
+
+		$scope.shouldShowDelete = false;
+
+	};
 
 	/**
 	 * START METHOD: CREATE/POST
 	 * opens new volunteer modal and adds sends volunteer to the volunteer API
 	 */
 	$scope.openVolunteerModal = function() {
-		var VolunteerModalInstance = $uibModal.open({
-			templateUrl: "../../js/views/newvolunteer-modal.php",
+		var VolunteerModalInstance = ({
+			templateUrl: "volunteer-new.html",
 			controller: "VolunteerModal",
 			resolve: {
 				volunteer: function() {
