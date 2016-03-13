@@ -6,6 +6,8 @@ app.controller("VolunteerController", ["$scope", "VolunteerService", "AlertServi
 	$scope.shouldShowDelete = false;
 
 
+	/** shows delete buttons in ion list **/
+
 	$scope.showDeleteButtons = function() {
 
 		$scope.shouldShowDelete = true;
@@ -165,31 +167,23 @@ app.controller("VolunteerController", ["$scope", "VolunteerService", "AlertServi
 	 *
 	 * @param volId the volunteer id to delete
 	 */
-	//$scope.deleteVolunteer = function(volId, index) {
-	//	//create a modal instance to prompt the user if she/he is sure they want to delete the misquote
-	//	var message = "Are you sure you want to delete this volunteer?";
-    //
-	//	var modalHtml = '<div class="modal-body">' + message + '</div><div class="modal-footer"><button class="btn btn-primary" ng-click="yes()">Yes</button><button class="btn btn-warning" ng-click="no()">No</button></div>';
-    //
-	//	var modalInstance = $uibModal.open({
-	//		template: modalHtml,
-	//		controller: ModalInstanceCtrl
-	//	});
-    //
-	//	//if the user clicked yes, delete the volunteer
-	//	modalInstance.result.then(function() {
-	//		VolunteerService.destroy(volId)
-	//			.then(function(result) {
-	//				if(result.data.status === 200) {
-	//					$scope.alerts[0] = {type: "success", msg: result.data.message};
-	//				} else {
-	//					$scope.alerts[0] = {type: "danger", msg: result.data.message};
-	//				}
-	//			});
-	//		//remove the current listing from array
-	//		$scope.volunteers.splice(index, 1);
-	//	});
-	//};
+	$scope.deleteVolunteer = function(volId, index) {
+
+		//if the user clicked yes, delete the volunteer
+
+			VolunteerService.destroy(volId)
+				.then(function(result) {
+					console.log(result);
+					if(result.data.status === 200) {
+						$scope.alerts[0] = {type: "success", msg: result.data.message};
+					} else {
+						$scope.alerts[0] = {type: "danger", msg: result.data.message};
+					}
+				});
+			//remove the current listing from array
+			$scope.volunteers.splice(index, 1);
+
+	};
 
 }]);
 

@@ -25,7 +25,7 @@
 
 				<h2>{{volunteer.volFirstName}} {{volunteer.volLastName}}</h2>
 				<i class="icon ion-chevron-right icon-accessory"></i>
-				<ion-delete-button class="ion-minus-circled"></ion-delete-button>
+				<ion-delete-button class="ion-minus-circled" ng-click="deleteVolunteer(volunteer.volId, volunteers.indexOf(volunteer));"></ion-delete-button>
 			</ion-item>
 		</ion-list>
 
