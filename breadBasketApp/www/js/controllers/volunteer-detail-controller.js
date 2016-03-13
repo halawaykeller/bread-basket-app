@@ -10,14 +10,16 @@ app.controller("VolDetailController", ["$scope", "$state", "$stateParams", "Volu
 		}
 	});
 
+	/**
+	 * START METHOD UPDATE/PUT
+	 * sends updated volunteer to the volunteer API
+	 */
 
 	$scope.submitVolunteer = function(volunteer) {
 		//need to set a volPassword here, so that the set password in the validation controller doesn't break
 
 		$scope.editedVolunteer = volunteer;
 		volunteer.volPassword = null;
-
-		console.log(volunteer);
 
 		VolunteerService.update($scope.volunteer.volId, $scope.volunteer)
 

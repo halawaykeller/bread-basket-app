@@ -1,11 +1,14 @@
-app.controller("SigninController", ["$scope", "$uibModal", "$window", "$state", "AlertService", "SigninService", "GetCurrentService", function($scope, $uibModal, $window, $state, AlertService, SigninService, GetCurrentService) {
+app.controller("SigninController", ["$scope", "$ionicLoading", "$uibModal", "$window", "$state", "AlertService", "SigninService", "GetCurrentService", function($scope, $ionicLoading, $uibModal, $window, $state, AlertService, SigninService, GetCurrentService) {
 	//$scope.signinData = {};
 	$scope.alerts = [];
 
+
 	$scope.submitSigninData = function(data)  {
+		  $ionicLoading.show();
 			$scope.signinData = data;
 			SigninService.signin(data)
 				.then(function(result) {
+					$ionicLoading.hide();
 					if(result.status === 200) {
 						$scope.alerts[0] = {type: "success", msg: result.message};
 						//three potential cases here: receiving volunteer, receiving admin, giving admin

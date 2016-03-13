@@ -1,5 +1,6 @@
 var app = angular.module("BreadBasket", ["ionic", "ngMessages", "ngPassword", "ui.bootstrap", "doowb.angular-pusher"])
 
+
 	.run(function($ionicPlatform) {
 		$ionicPlatform.ready(function() {
 			if(window.cordova && window.cordova.plugins.Keyboard) {
@@ -55,6 +56,7 @@ var app = angular.module("BreadBasket", ["ionic", "ngMessages", "ngPassword", "u
 						}
 					}
 				})
+
 				.state('tab.listings', {
 					url: '/listings',
 					views: {

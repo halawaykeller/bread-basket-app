@@ -1,58 +1,26 @@
 app.controller("VolunteerController", ["$scope", "VolunteerService", "AlertService", function($scope, VolunteerService, AlertService) {
-	$scope.editedVolunteer = {};
 	$scope.index = null;
 	$scope.alerts = [];
 	$scope.volunteers = [];
+
 
 	/**
 	 * START METHOD: CREATE/POST
 	 * opens new volunteer modal and adds sends volunteer to the volunteer API
 	 */
-	//$scope.openVolunteerModal = function() {
-	//	var VolunteerModalInstance = $uibModal.open({
-	//		templateUrl: "../../js/views/newvolunteer-modal.php",
-	//		controller: "VolunteerModal",
-	//		resolve: {
-	//			volunteer: function() {
-	//				return ($scope.volunteers);
-	//			}
-	//		}
-	//	});
-	//	VolunteerModalInstance.result.then(function(volunteer) {
-    //
-	//		VolunteerService.create(volunteer)
-	//			.then(function(result) {
-	//				if(result.data.status === 200) {
-	//					$scope.alerts[0] = {type: "success", msg: result.data.message};
-	//				} else {
-	//					$scope.alerts[0] = {type: "danger", msg: result.data.message};
-	//				}
-	//			});
-	//		//push the new volunteer into the array to update live
-	//		$scope.volunteers.push(volunteer);
-	//	});
-	//};
-
-	/**
-	 * START METHOD UPDATE/PUT
-	 * opens edit volunteer modal and sends updated volunteer to the volunteer API
-	 */
-
-	$scope.openEditVolunteerModal = function() {
-		var EditVolunteerModalInstance = $uibModal.open({
-			templateUrl: "../../js/views/editvolunteer-modal.php",
-			controller: "EditVolunteerModal",
+	$scope.openVolunteerModal = function() {
+		var VolunteerModalInstance = $uibModal.open({
+			templateUrl: "../../js/views/newvolunteer-modal.php",
+			controller: "VolunteerModal",
 			resolve: {
-				editedVolunteer: function() {
-					return ($scope.editedVolunteer);
+				volunteer: function() {
+					return ($scope.volunteers);
 				}
 			}
 		});
-		EditVolunteerModalInstance.result.then(function(volunteer) {
-			//need to set a volPassword here, so that the set password in the validation controller doesn't break
-			volunteer.volPassword = null;
-			//send the update request to the database
-			VolunteerService.update(volunteer.volId, volunteer)
+		VolunteerModalInstance.result.then(function(volunteer) {
+
+			VolunteerService.create(volunteer)
 				.then(function(result) {
 					if(result.data.status === 200) {
 						$scope.alerts[0] = {type: "success", msg: result.data.message};
@@ -60,18 +28,50 @@ app.controller("VolunteerController", ["$scope", "VolunteerService", "AlertServi
 						$scope.alerts[0] = {type: "danger", msg: result.data.message};
 					}
 				});
-			//update angulars copy for dynamic table updates
-			$scope.volunteers[$scope.index] = volunteer;
-			$scope.index = null;
+			//push the new volunteer into the array to update live
+			$scope.volunteers.push(volunteer);
 		});
 	};
 
-	$scope.setEditedVolunteer = function(volunteer, index) {
-		//set the edited volunteer in the scope, and set the index for updating the array
-		$scope.editedVolunteer = angular.copy(volunteer);
-		$scope.index = index;
-		$scope.openEditVolunteerModal();
-	};
+	///**
+	// * START METHOD UPDATE/PUT
+	// * opens edit volunteer modal and sends updated volunteer to the volunteer API
+	// */
+	//
+	//$scope.openEditVolunteerModal = function() {
+	//	var EditVolunteerModalInstance = $uibModal.open({
+	//		templateUrl: "../../js/views/editvolunteer-modal.php",
+	//		controller: "EditVolunteerModal",
+	//		resolve: {
+	//			editedVolunteer: function() {
+	//				return ($scope.editedVolunteer);
+	//			}
+	//		}
+	//	});
+	//	EditVolunteerModalInstance.result.then(function(volunteer) {
+	//		//need to set a volPassword here, so that the set password in the validation controller doesn't break
+	//		volunteer.volPassword = null;
+	//		//send the update request to the database
+	//		VolunteerService.update(volunteer.volId, volunteer)
+	//			.then(function(result) {
+	//				if(result.data.status === 200) {
+	//					$scope.alerts[0] = {type: "success", msg: result.data.message};
+	//				} else {
+	//					$scope.alerts[0] = {type: "danger", msg: result.data.message};
+	//				}
+	//			});
+	//		//update angulars copy for dynamic table updates
+	//		$scope.volunteers[$scope.index] = volunteer;
+	//		$scope.index = null;
+	//	});
+	//};
+	//
+	//$scope.setEditedVolunteer = function(volunteer, index) {
+	//	//set the edited volunteer in the scope, and set the index for updating the array
+	//	$scope.editedVolunteer = angular.copy(volunteer);
+	//	$scope.index = index;
+	//	$scope.openEditVolunteerModal();
+	//};
 
 
 	/**

@@ -2,27 +2,27 @@
   This template loads for the 'tab.volunteer-detail' state (breadbasket.js)
   it's also a form that submits update data back to the volunteer service
 -->
-<ion-view view-title="Volunteer">
+<ion-view view-title="New Volunteer">
 	<ion-content class="padding">
 		<div class="list">
-			<label class="item item-input item-floating-label">
+			<label class="item item-input item-stacked-label">
 				<span class="input-label">First Name</span>
-				<input ng-model="volunteer.volFirstName" type="text" placeholder="{{volunteer.volFirstName}}">
+				<input ng-model="volunteer.volFirstName" type="text" placeholder="First Name">
 			</label>
 			<label class="item item-input item-floating-label">
 				<span class="input-label">Last Name</span>
-				<input ng-model="volunteer.volLastName" type="text" placeholder="{{volunteer.volLastName}}">
+				<input ng-model="volunteer.volLastName" type="text" placeholder="Last Name">
 			</label>
 			<label class="item item-input item-floating-label">
 				<span class="input-label">Email</span>
-				<input ng-model="volunteer.volEmail" type="text" placeholder="{{volunteer.volEmail}}">
+				<input ng-model="volunteer.volEmail" type="text" placeholder="Email">
 			</label>
 			<label class="item item-input item-floating-label">
 				<span class="input-label">Phone</span>
-				<input ng-model="volunteer.volPhone" type="text" placeholder="{{volunteer.volPhone}}">
+				<input ng-model="volunteer.volPhone" type="text" placeholder="Phone">
 			</label>
 		</div>
-		<button class="button button-full button-positive" ng-click="submitVolunteer(volunteer);">
+		<button class="button button-full button-positive" ng-click="createVolunteer(volunteer);">
 			Submit
 		</button>
 
