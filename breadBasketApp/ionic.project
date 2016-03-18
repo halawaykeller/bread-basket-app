@@ -1,34 +1,34 @@
 {
   "name": "breadBasketApp",
-  "app_id": "",
+  "app_id": "25004308",
   "proxies": [
-      {
-        "path": "/php/controllers/sign-in-controller.php",
-        "proxyUrl": "https://breadbasketapp.com/php/controllers/sign-in-controller.php"
-      },
-      {
-      	"path": "/php/api/organization/",
-      	"proxyUrl": "https://breadbasketapp.com/php/api/organization/"
-      },
-      {
-      	"path": "/php/api/volunteer/",
-      	"proxyUrl": "https://breadbasketapp.com/php/api/volunteer/"
-      },
-      {
-      	"path": "/php/api/organization/",
-      	"proxyUrl": "https://breadbasketapp.com/php/api/organization/"
-      },
-      {
-      	"path": "/php/api/listing/",
-      	"proxyUrl": "https://breadbasketapp.com/php/api/listing/"
-      },
-      {
-      	"path": "/php/controllers/landing-controller.php",
-      	"proxyUrl": "https://breadbasketapp.com/php/controllers/landing-controller.php"
-      },
-      {
-      	"path": "/php/api/listingtype/",
-      	"proxyUrl": "https://breadbasketapp.com/php/api/listingtype/"
-      }
-    ]
+    {
+      "path": "/php/controllers/sign-in-controller.php",
+      "proxyUrl": "https://breadbasketapp.com/php/controllers/sign-in-controller.php"
+    },
+    {
+      "path": "/php/api/organization/",
+      "proxyUrl": "https://breadbasketapp.com/php/api/organization/"
+    },
+    {
+      "path": "/php/api/volunteer/",
+      "proxyUrl": "https://breadbasketapp.com/php/api/volunteer/"
+    },
+    {
+      "path": "/php/api/organization/",
+      "proxyUrl": "https://breadbasketapp.com/php/api/organization/"
+    },
+    {
+      "path": "/php/api/listing/",
+      "proxyUrl": "https://breadbasketapp.com/php/api/listing/"
+    },
+    {
+      "path": "/php/controllers/landing-controller.php",
+      "proxyUrl": "https://breadbasketapp.com/php/controllers/landing-controller.php"
+    },
+    {
+      "path": "/php/api/listingtype/",
+      "proxyUrl": "https://breadbasketapp.com/php/api/listingtype/"
+    }
+  ]
 }
