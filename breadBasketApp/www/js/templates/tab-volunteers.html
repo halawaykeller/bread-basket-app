@@ -3,7 +3,7 @@
 	<ion-nav-buttons side="primary">
 		<!--this button shows the delete buttons in the ion list-->
 
-		<button class="button" ng-click="showDeleteButtons();" ng-show="shouldShowDelete = true;">
+		<button class="button" ng-click="showDeleteButtons();" ng-hide="shouldShowDelete = false;">
 			delete
 			<i class="icon ion-ios-minus-outline"></i>
 		</button>
@@ -20,7 +20,9 @@
 	</ion-nav-buttons>
 
 	<ion-content class="padding">
-
+		<ion-toggle ng-model="shouldShowDelete">
+			Show Delete?
+		</ion-toggle>
 
 			<!--volunteers list-->
 		<!--Shows the volunteers in that organization-->
