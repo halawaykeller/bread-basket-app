@@ -16,6 +16,7 @@
 	<!--Listings-->
 	<ion-content class="padding">
 		<ion-list>
+<<<<<<< Updated upstream
 
 			<ion-item class="item item-button-right" ng-repeat="listing in listings| orderBy: '-listingPostTime'" type="item-text-wrap" ng-href={{chooseView(listing.listingId)}}>
 				<h2>{{ listing.listingMemo }}</h2>
@@ -29,6 +30,26 @@
 				</button>
 			</ion-item>
 
+=======
+			<div class="bar-header button-bar">
+				<a class="button button-dark button-clear">
+					Description</a>
+				<a class="button button-clear button-dark">Date Posted</a>
+				<a class="button button-clear button-dark">Status</a>
+			</div>
+			<div class="button-bar" ng-hide="listing.listingClaimedBy" ng-repeat="listing in listings| orderBy: '-listingPostTime'" type="item-text-wrap" href="#tab/listings/{{listing.listingId}}">
+				<h1 class="button button-balanced">{{ listing.listingMemo }}</h1>
+				<a class="button button-balanced">{{ listing.listingPostTime | date : 'short' }}</a>
+				<a class="button button-balanced">VIEW</a>
+			</div>
+			<div class="button-bar" ng-show="listing.listingClaimedBy" ng-repeat="listing in listings| orderBy: '-listingPostTime'" type="item-text-wrap" href="#tab/listings/{{listing.listingId}}">
+				<h1 class="button button-energized">{{ listing.listingMemo }}</h1>
+				<a class="button button-energized">{{ listing.listingPostTime | date : 'short' }}</a>
+				<a class="button button-energized">CLAIMED</a>
+			</div>
+>>>>>>> Stashed changes
 		</ion-list>
 	</ion-content>
 </ion-view>
+
+
