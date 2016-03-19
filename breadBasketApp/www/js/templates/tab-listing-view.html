@@ -1,28 +1,40 @@
 <ion-view view-title="Listing Details">
-    <ion-content class="padding">
-        <h3>
-            {{listing.listingMemo}}
-        </h3>
-        <h3>
-            Posted On: {{listing.listingPostTime | date: 'short'}}
-        </h3>
-        <h3>
-            {{listingType.listingTypeInfo}}
-        </h3>
-        <h3>
-            Location: {{organization.orgAddress1}} {{organization.orgAddress2}} {{organization.orgCity}} {{organization.orgState}} {{organization.orgZip}}
-        </h3>
-        <h3>
-            Hours: {{organization.orgHours}}
-        </h3>
-        <h3>
-            Phone: {{organization.orgPhone}}
-        </h3>
-        <!--ng-hide this and show a "listing claimed" button after claiming-->
-        <button ng-hide="listing.listingClaimedBy" class="button button-balanced" ng-click="claimListing();">Claim Listing</button>
-        <div ng-if="listing.listingClaimedBy === returnCurrentOrg();">
-            <button ng-show="listing.listingClaimedBy" class="button button-energized" ng-click="unclaimListing();">Unclaim Listing</button>
-        </div><div ng-if="listing.listingClaimedBy === returnCurrentOrg();">
-        <!--givers are going to have to be able to click this to see claimer details later-->
-    </ion-content>
+	<ion-content class="padding">
+		<h3>
+			{{listing.listingMemo}}
+		</h3>
+
+		<h3>
+			Posted On: {{listing.listingPostTime | date: 'short'}}
+		</h3>
+
+		<h3>
+			{{listingType.listingTypeInfo}}
+		</h3>
+
+		<h3>
+			Location: {{organization.orgAddress1}} {{organization.orgAddress2}} {{organization.orgCity}}
+			{{organization.orgState}} {{organization.orgZip}}
+		</h3>
+
+		<h3>
+			Hours: {{organization.orgHours}}
+		</h3>
+
+		<h3>
+			Phone: {{organization.orgPhone}}
+		</h3>
+
+		<div ng-hide="returnCurrentOrgType()==='G'">
+			<!--ng-hide this and show a "listing claimed" button after claiming-->
+			<button ng-hide="listing.listingClaimedBy" class="button button-balanced" ng-click="claimListing();">Claim
+				Listing
+			</button>
+			<div ng-if="listing.listingClaimedBy === returnCurrentOrgId();">
+				<button ng-show="listing.listingClaimedBy" class="button button-energized" ng-click="unclaimListing();">
+					Unclaim Listing
+				</button>
+			</div>
+		</div>
+	</ion-content>
 </ion-view>

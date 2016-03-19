@@ -31,12 +31,16 @@ app.controller("ListingViewController", ["$scope", "$stateParams", "ListingServi
 
     GetCurrentService.fetchOrgCurrent().then(function(result){
         if(result.data.status === 200) {
-            orgCurrent = result.data.data.orgId;
+            orgCurrent = result.data.data;
         }
     });
 
-    $scope.returnCurrentOrg = function() {
-        return orgCurrent;
+    $scope.returnCurrentOrgId = function() {
+        return orgCurrent.orgId;
+    };
+
+    $scope.returnCurrentOrgType = function() {
+        return orgCurrent.orgType;
     };
 
 
