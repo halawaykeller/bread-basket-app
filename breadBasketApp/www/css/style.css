@@ -1,1 +1,10 @@
 /* Empty. Add your own CSS if you like */
+.opening-food-pic {
+    background: url('../img/food-ingredients-high.jpg') no-repeat center;
+    background-size: cover;
+}
+
+.hand-n-berries {
+    background: url("../img/cranberries.jpg") no-repeat center;
+    /*background-size: cover;*/
+}
