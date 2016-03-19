@@ -7,7 +7,7 @@ app.controller("ListingController", ["$scope", "ListingService", "AlertService",
 	$scope.alerts = [];
 	$scope.listings = [];
 
-	var currentOrg;
+	$scope.currentOrg = {};
 
 
 	/**
@@ -167,7 +167,7 @@ app.controller("ListingController", ["$scope", "ListingService", "AlertService",
 	//get the current organization, to determine which listing details the user should see
 	GetCurrentService.fetchOrgCurrent().then(function(result){
 		if (result.data.status === 200) {
-			currentOrg = result.data.data;
+			$scope.currentOrg = result.data.data;
 		} else {
 			$scope.alerts[0] = {type: "danger", msg: result.data.message};
 		}
@@ -384,11 +384,19 @@ app.controller("ListingController", ["$scope", "ListingService", "AlertService",
 	/**
 	 * method for determining whether to go to giving or receiving view for a listing
 	 */
-	$scope.chooseView = function(listingId) {
+	$scope.chooseView = function(listingId, listingClaimedBy) {
+		var currentOrg = $scope.currentOrg;
+		//if receiver, send to detailed view
 		if (currentOrg.orgType === 'R') {
 			return ("#tab/listings/" + listingId);
 		} else if (currentOrg.orgType === 'G') {
-			return ("#tab/claim-details/" + listingId);
+			if (listingClaimedBy === null) {
+				//if giver and not claimed, show detail view?
+				return ("#tab/listings/" + listingId);
+			} else {
+				//if giver and claimed, see details of who claimed
+				return ("#tab/claim-details/" + listingId);
+			}
 		} else {
 			return ("wat");
 		}
