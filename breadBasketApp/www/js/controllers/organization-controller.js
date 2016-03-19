@@ -1,4 +1,4 @@
-app.controller("OrganizationController", ["$scope", "OrganizationService", "GetCurrentService", "$uibModal",  function($scope, OrganizationService, GetCurrentService, $uibModal) {
+app.controller("OrganizationController", ["$scope", "$state", "OrganizationService", "GetCurrentService", "$uibModal",  function($scope, $state, OrganizationService, GetCurrentService, $uibModal) {
 	//add as needed
 
 	//the organization for the view will be the first element in this array
@@ -137,19 +137,17 @@ app.controller("OrganizationController", ["$scope", "OrganizationService", "GetC
 	};
 
 	//update the organization
-	$scope.updateOrganization = function(organization, validated) {
-		if(validated === true && $scope.isEditing === true) {
+	$scope.updateOrganization = function(organization) {
 			OrganizationService.update(organization.orgId, organization)
 					.then(function(result) {
 						if(result.data.status === 200) {
-							$scope.alerts[0] = {type: "success", msg: result.data.message};
+							$state.go('tab.organization', {reload: true});
 							//cancel the editing mode
 							$scope.isEditing = false;
 						} else {
 							$scope.alerts[0] = {type: "danger", msg: result.data.message};
 						}
 					});
-		}
 	};
 
 	//delete the organization

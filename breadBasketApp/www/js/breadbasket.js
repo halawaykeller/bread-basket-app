@@ -38,6 +38,16 @@ var app = angular.module("BreadBasket", ["ionic", "ngMessages", "ngPassword", "u
 						}
 					}
 				})
+
+				.state('tab.org-edit', {
+					url: '/organization/:orgId',
+					views: {
+						'tab-organization': {
+							templateUrl: 'js/templates/org-edit.html',
+							controller: 'OrganizationController'
+						}
+					}
+				})
 				.state('tab.volunteers', {
 					url: '/volunteers',
 					views: {

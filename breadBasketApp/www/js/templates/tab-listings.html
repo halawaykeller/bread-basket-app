@@ -1,20 +1,11 @@
 <ion-view view-title="Listings">
 
-	<ion-nav-buttons side="primary">
-		<!--this button shows the delete buttons in the ion list-->
-		<button class="button" ng-click="doSomething()">
-			delete
-			<i class="icon ion-ios-minus-outline"></i>
-		</button>
-		<!--this button creates a modal to add a new listing-->
-		<button class="button" ng-click="doSomething()">
-			new
-			<i class="icon ion-ios-plus-outline"></i>
-		</button>
 
-	</ion-nav-buttons>
-	<!--Listing.s-->
-	<ion-content class="padding">
+
+
+	<!--Listings-->
+
+
 		<ion-list>
 
 			<!--This is the table headers-->
@@ -23,6 +14,10 @@
 					Description</a>
 				<a class="button button-clear button-dark">Date Posted</a>
 				<a class="button button-clear button-dark">Status</a>
+			</div>
+			<!--divider-->
+			<div class="item item-divider">
+				Listings
 			</div>
 
 			<ion-item class="item item-button-right" ng-repeat="listing in listings| orderBy: '-listingPostTime'" type="item-text-wrap" ng-href={{chooseView(listing.listingId,listing.listingClaimedBy)}}>

@@ -1,0 +1,42 @@
+<!--
+  This template loads for the 'tab.volunteer-detail' state (breadbasket.js)
+  it's also a form that submits update data back to the volunteer service
+-->
+<ion-view view-title="Organization">
+	<ion-content class="padding">
+		<div class="list">
+			<label class="item item-input item-floating-label">
+				<span class="input-label">Address 1</span>
+				<input ng-model="organization.orgAddress1" type="text" placeholder="{{organization.orgAddress1}}">
+			</label>
+			<label class="item item-input item-floating-label">
+				<span class="input-label">Address 2</span>
+				<input ng-model="organization.orgAddress2" type="text" placeholder="{{organization.orgAddress2}}">
+			</label>
+			<label class="item item-input item-floating-label">
+				<span class="input-label">City</span>
+				<input ng-model="organization.orgCity" type="text" placeholder="{{organization.orgCity}}">
+			</label>
+			<label class="item item-input item-floating-label">
+				<span class="input-label">State</span>
+				<input ng-model="organization.orgState" type="text" placeholder="{{organization.orgState}}">
+			</label>
+			<label class="item item-input item-floating-label">
+				<span class="input-label">Zip</span>
+				<input ng-model="organization.orgZip" type="text" placeholder="{{organization.orgZip}}">
+			</label>
+			<label class="item item-input item-floating-label">
+				<span class="input-label">Phone</span>
+				<input ng-model="organization.orgPhone" type="text" placeholder="{{organization.orgPhone}}">
+			</label>
+			<label class="item item-input item-floating-label">
+				<span class="input-label">Hours</span>
+				<input ng-model="organization.orgHours" type="text" placeholder="{{organization.orgHours}}">
+			</label>
+		</div>
+		<button class="button button-full button-positive" ng-click="updateOrganization(organization);">
+			Submit
+		</button>
+
+	</ion-content>
+</ion-view>
