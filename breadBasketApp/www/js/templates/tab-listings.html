@@ -5,8 +5,19 @@
 
 	<!--Listings-->
 
+	<ion-content class="padding">
 
-		<ion-list>
+		<ion-toggle ng-model="shouldShowDelete">
+			Show Delete?
+		</ion-toggle>
+
+		<!--add new volunteer-->
+		<a class="item item-icon-right" ng-click="openNewListing();"> New Listing
+			<i class="icon ion-chevron-right icon-accessory"></i>
+		</a>
+
+
+		<ion-list show-delete="shouldShowDelete">
 
 			<!--This is the table headers-->
 			<div class="bar-header button-bar">
@@ -20,6 +31,7 @@
 				Listings
 			</div>
 
+			<!--listings-->
 			<ion-item class="item item-button-right" ng-repeat="listing in listings| orderBy: '-listingPostTime'" type="item-text-wrap" ng-href={{chooseView(listing.listingId,listing.listingClaimedBy)}}>
 				<h2>{{ listing.listingMemo }}</h2>
 				<p>{{ listing.listingPostTime | date : 'short' }}</p>
@@ -30,6 +42,8 @@
 				<button class="button button-energized" ng-show="listing.listingClaimedBy">
 					CLAIMED
 				</button>
+
+				<ion-delete-button class="ion-minus-circled" ng-click="deleteListing(listing.listingId, listings.indexOf(listing));"></ion-delete-button
 			</ion-item>
 
 		</ion-list>
