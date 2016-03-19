@@ -7,6 +7,8 @@ app.controller("ListingController", ["$scope", "ListingService", "AlertService",
 	$scope.alerts = [];
 	$scope.listings = [];
 
+	var currentOrg;
+
 
 	/**
 	 * START METHOD: CREATE/POST
@@ -161,6 +163,15 @@ app.controller("ListingController", ["$scope", "ListingService", "AlertService",
 	if($scope.listings.length === 0) {
 		$scope.listings = $scope.getListings();
 	}
+
+	//get the current organization, to determine which listing details the user should see
+	GetCurrentService.fetchOrgCurrent().then(function(result){
+		if (result.data.status === 200) {
+			currentOrg = result.data.data;
+		} else {
+			$scope.alerts[0] = {type: "danger", msg: result.data.message};
+		}
+	});
 
 	/**
 	 * START METHOD(S): FETCH/GET
@@ -366,6 +377,24 @@ app.controller("ListingController", ["$scope", "ListingService", "AlertService",
 			$scope.listings.splice(index, 1);
 		});
 	};
+
+
+
+
+	/**
+	 * method for determining whether to go to giving or receiving view for a listing
+	 */
+	$scope.chooseView = function(listingId) {
+		if (currentOrg.orgType === 'R') {
+			return ("#tab/listings/" + listingId);
+		} else if (currentOrg.orgType === 'G') {
+			return ("#");
+		} else {
+			return ("wat");
+		}
+	};
+
+
 
 	/**
 	 * START PUSHER METHODS
