@@ -1,4 +1,4 @@
-app.controller("VolunteerController", ["$scope","VolunteerService", "AlertService", "$ionicModal", function($scope, VolunteerService, $ionicModal) {
+app.controller("VolunteerController", ["$scope", "$ionicListDelegate", "VolunteerService", "AlertService", "$ionicModal", function($scope, $ionicListDelegate, VolunteerService, $ionicModal) {
 	$scope.index = null;
 	$scope.alerts = [];
 	$scope.volunteers = [];
@@ -8,14 +8,7 @@ app.controller("VolunteerController", ["$scope","VolunteerService", "AlertServic
 	/** shows delete buttons in ion list **/
 
 	$scope.showDeleteButtons = function() {
-
-		$scope.shouldShowDelete = true;
-
-	};
-
-	$scope.hideDeleteButtons = function() {
-
-		$scope.shouldShowDelete = false;
+		$ionicListDelegate.showDelete(true);
 
 	};
 
@@ -23,17 +16,8 @@ app.controller("VolunteerController", ["$scope","VolunteerService", "AlertServic
 	 * START METHOD: CREATE/POST
 	 * opens new volunteer modal and adds sends volunteer to the volunteer API
 	 */
-	$scope.openVolunteerModal = function() {
-		var VolunteerModalInstance = ({
-			templateUrl: "volunteer-new.html",
-			controller: "VolunteerModal",
-			resolve: {
-				volunteer: function() {
-					return ($scope.volunteers);
-				}
-			}
-		});
-		VolunteerModalInstance.result.then(function(volunteer) {
+
+		$scope.newVolunteer = function(volunteer) {
 
 			VolunteerService.create(volunteer)
 				.then(function(result) {
@@ -43,10 +27,9 @@ app.controller("VolunteerController", ["$scope","VolunteerService", "AlertServic
 						$scope.alerts[0] = {type: "danger", msg: result.data.message};
 					}
 				});
-			//push the new volunteer into the array to update live
-			$scope.volunteers.push(volunteer);
-		});
-	};
+
+		};
+
 
 	///**
 	// * START METHOD UPDATE/PUT

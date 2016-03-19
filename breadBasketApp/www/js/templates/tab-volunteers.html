@@ -1,33 +1,18 @@
 <ion-view view-title="Volunteers">
 
-	<ion-nav-buttons side="primary">
-		<!--this button shows the delete buttons in the ion list-->
-
-		<button class="button" ng-click="showDeleteButtons();" ng-hide="shouldShowDelete = false;">
-			delete
-			<i class="icon ion-ios-minus-outline"></i>
-		</button>
-		<button class="button" ng-click="hideDeleteButtons();" ng-hide="shouldShowDelete = false;">
-			delete 2
-			<i class="icon ion-ios-minus-outline"></i>
-		</button>
-		<!--this button creates a modal to add a new volunteer-->
-		<ion class="button" ng-show="openVolunteerModal();" >
-			new
-			<i class="icon ion-ios-plus"></i>
-		</ion>
-
-	</ion-nav-buttons>
 
 	<ion-content class="padding">
 		<ion-toggle ng-model="shouldShowDelete">
 			Show Delete?
 		</ion-toggle>
 
+		<!--add new volunteer-->
+		<ion-item class="item item-icon-right" href="#tab/volunteers/volunteer-new"> New Volunteer
+			<i class="icon ion-chevron-right icon-accessory"></i>
+		</ion-item>
 			<!--volunteers list-->
 		<!--Shows the volunteers in that organization-->
 		<ion-list show-delete="shouldShowDelete">
-
 			<ion-item class="item item-icon-right" ng-repeat="volunteer in volunteers" type="item-text-wrap" href="#tab/volunteers/{{volunteer.volId}}">
 
 				<h2>{{volunteer.volFirstName}} {{volunteer.volLastName}}</h2>
