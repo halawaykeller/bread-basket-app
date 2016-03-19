@@ -1,6 +1,6 @@
 app.controller("ListingViewController", ["$scope", "$stateParams", "ListingService", "OrganizationService", "ListingTypeService", "GetCurrentService", "Pusher", function($scope, $stateParams, ListingService, OrganizationService, ListingTypeService, GetCurrentService, Pusher) {
 
-    var orgCurrent;
+    var orgCurrent = {};
 
     $scope.listing = {};
     $scope.organization = {};
