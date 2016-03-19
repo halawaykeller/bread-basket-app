@@ -7,9 +7,14 @@
 		</ion-toggle>
 
 		<!--add new volunteer-->
-		<ion-item class="item item-icon-right" href="#tab/volunteers/volunteer-new"> New Volunteer
+		<a class="item item-icon-right" ng-click="openNewVolunteer();"> New Volunteer
 			<i class="icon ion-chevron-right icon-accessory"></i>
-		</ion-item>
+		</a>
+		<!--divider-->
+		<div class="item item-divider">
+			Volunteers
+		</div>
+
 			<!--volunteers list-->
 		<!--Shows the volunteers in that organization-->
 		<ion-list show-delete="shouldShowDelete">

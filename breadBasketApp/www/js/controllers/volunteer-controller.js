@@ -1,4 +1,4 @@
-app.controller("VolunteerController", ["$scope", "$ionicListDelegate", "VolunteerService", "AlertService", "$ionicModal", function($scope, $ionicListDelegate, VolunteerService, $ionicModal) {
+app.controller("VolunteerController", ["$scope", "$state", "$ionicListDelegate", "VolunteerService", "AlertService", "$ionicModal", function($scope, $state, $ionicListDelegate, VolunteerService, $ionicModal) {
 	$scope.index = null;
 	$scope.alerts = [];
 	$scope.volunteers = [];
@@ -17,12 +17,18 @@ app.controller("VolunteerController", ["$scope", "$ionicListDelegate", "Voluntee
 	 * opens new volunteer modal and adds sends volunteer to the volunteer API
 	 */
 
+	//opens the new volunteer view
+		$scope.openNewVolunteer = function() {
+			$state.go('tab.volunteer-new');
+
+		};
+
 		$scope.newVolunteer = function(volunteer) {
 
 			VolunteerService.create(volunteer)
 				.then(function(result) {
 					if(result.data.status === 200) {
-						$scope.alerts[0] = {type: "success", msg: result.data.message};
+						$state.go('tab.volunteers', {reload: true});
 					} else {
 						$scope.alerts[0] = {type: "danger", msg: result.data.message};
 					}
