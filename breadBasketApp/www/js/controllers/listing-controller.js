@@ -388,12 +388,11 @@ app.controller("ListingController", ["$scope", "ListingService", "AlertService",
 		if (currentOrg.orgType === 'R') {
 			return ("#tab/listings/" + listingId);
 		} else if (currentOrg.orgType === 'G') {
-			return ("#");
+			return ("#tab/claim-details/" + listingId);
 		} else {
 			return ("wat");
 		}
 	};
-
 
 
 	/**

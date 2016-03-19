@@ -92,6 +92,15 @@ var app = angular.module("BreadBasket", ["ionic", "ngMessages", "ngPassword", "u
 							templateUrl: 'js/templates/tab-dashboard.html'
 						}
 					}
+				})
+				.state('tab.tab-claim-details', {
+					url: '/claim-details/:listingId',
+					views: {
+						'tab-listings': {
+							templateUrl: 'js/templates/tab-claim-details.html',
+							controller: 'ClaimDetailsController'
+						}
+					}
 				});
 
 				$urlRouterProvider.otherwise('/login');
