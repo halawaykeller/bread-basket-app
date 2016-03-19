@@ -17,6 +17,14 @@
 	<ion-content class="padding">
 		<ion-list>
 
+			<!--This is the table headers-->
+			<div class="bar-header button-bar">
+				<a class="button button-dark button-clear">
+					Description</a>
+				<a class="button button-clear button-dark">Date Posted</a>
+				<a class="button button-clear button-dark">Status</a>
+			</div>
+
 			<ion-item class="item item-button-right" ng-repeat="listing in listings| orderBy: '-listingPostTime'" type="item-text-wrap" ng-href={{chooseView(listing.listingId,listing.listingClaimedBy)}}>
 				<h2>{{ listing.listingMemo }}</h2>
 				<p>{{ listing.listingPostTime | date : 'short' }}</p>
