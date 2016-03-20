@@ -1,0 +1,23 @@
+<ion-pane>
+    <ion-header-bar class="bar-stable">
+        <h1 class="title">Bread Basket</h1>
+    </ion-header-bar>
+    <ion-content class="padding hand-n-berries">
+        <!--Hello text-->
+        <h3>Join the Bread Basket movement!</h3>
+        <h4> Sign up today and join the Bread Basket movement.</h4>
+
+        <!--LOGIN PAGE BEGINS-->
+        <div class="list list-inset">
+            <label class="item item-input">
+                <input type="email" ng-model="signinData.email" placeholder="Email">
+            </label>
+            <label class="item item-input">
+                <input type="password" ng-model="signinData.password" placeholder="Password">
+            </label>
+            <button ng-controller="SignupController" ng-click="submitSigninData(signinData);" class="button button-block button-positive">Submit</button>
+        </div>
+
+
+    </ion-content>
+</ion-pane>
