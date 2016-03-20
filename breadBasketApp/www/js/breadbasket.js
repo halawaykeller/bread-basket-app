@@ -26,7 +26,7 @@ var app = angular.module("BreadBasket", ["ionic", "ngMessages", "ngPassword", "u
 				})
 				.state('sign-up', {
 					url: '/sign-up',
-					templateUrl: 'js/templates/sign-up.html'
+					templateUrl: 'js/templates/sign-up.html',
 					controller: 'SignupController'
 				})
 				.state('tab', {
