@@ -1,40 +1,45 @@
 <ion-pane>
-	<ion-view view-title="Welcome to Bread Basket!">
-	<ion-content class="padding hand-n-berries">
-		<!--Hello text-->
-			<h4> Bread Basket aims to eliminate hunger by connecting grocery stores and restaurants with foodbanks and shelters.</h4>
-		<div class="padding-left">
-		<h4>Food Provider</h4>
-			<div class="padding-left">
-				<div><i class="ion-soup-can-outline"></i> &nbsp;Create a New Listing</div>
-				<div><i class="ion-clock"></i> &nbsp;Wait for a Volunteer to claim it</div>
-				<div><i class="ion-arrow-swap"></i> &nbsp;Pass off the donation</div>
-			</div>
+    <ion-view view-title="Welcome to Bread Basket!">
+        <ion-content class="padding opening-food-pic">
+            <!--Hello text-->
+            <h4> Bread Basket aims to eliminate hunger by connecting grocery stores and restaurants with foodbanks and
+                shelters.</h4>
 
-		<h4>Food Receiver</h4>
-			<div class="padding-left">
-				<div><i class="ion-document-text"></i> &nbsp;View all Listings</div>
-				<div><i class="ion-checkmark-circled"></i> &nbsp;Claim a Listing</div>
-				<div><i class="ion-android-car"></i> &nbsp;Pick up the Listing</div>
-				<p></p>
-			</div>
-		</div>
-		<div class="text-center">
-		<a class="text-center" href="sign-up.html">Sign up today!</a>
+            <div class="padding-left">
+                <h4>Food Provider</h4>
 
+                <div class="padding-left">
+                    <div><i class="ion-soup-can-outline"></i> &nbsp;Create a New Listing</div>
+                    <div><i class="ion-clock"></i> &nbsp;Wait for a Volunteer to claim it</div>
+                    <div><i class="ion-arrow-swap"></i> &nbsp;Pass off the donation</div>
+                </div>
 
-		<!--LOGIN PAGE BEGINS-->
-		<div class="list list-inset">
-			<label class="item item-input">
-				<input type="email" ng-model="signinData.email" placeholder="Email">
-			</label>
-			<label class="item item-input">
-				<input type="password" ng-model="signinData.password" placeholder="Password">
-			</label>
-			<button ng-controller="SigninController" ng-click="submitSigninData(signinData);" class="button button-block button-positive">Submit</button>
-		</div>
+                <h4>Food Receiver</h4>
 
+                <div class="padding-left">
+                    <div><i class="ion-document-text"></i> &nbsp;View all Listings</div>
+                    <div><i class="ion-checkmark-circled"></i> &nbsp;Claim a Listing</div>
+                    <div><i class="ion-android-car"></i> &nbsp;Pick up the Listing</div>
+                    <p></p>
+                </div>
+            </div>
+            <div class="text-center">
+                <a class="text-center" sta="#/sign-up"><script type="text/javascript">	$state.go("#/sign-up");</script>Sign up today!</a>
 
-		</ion-view>
-	</ion-content>
+                <!--href="sign-up.html"-->
+
+                <!--LOGIN PAGE BEGINS-->
+                <div class="list list-inset">
+                    <label class="item item-input">
+                        <input type="email" ng-model="signinData.email" placeholder="Email">
+                    </label>
+                    <label class="item item-input">
+                        <input type="password" ng-model="signinData.password" placeholder="Password">
+                    </label>
+                    <button ng-controller="SigninController" ng-click="submitSigninData(signinData);"
+                            class="button button-block button-positive">Submit
+                    </button>
+                </div>
+        </ion-content>
+    </ion-view>
 </ion-pane>
