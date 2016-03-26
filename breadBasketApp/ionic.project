@@ -29,6 +29,10 @@
     {
       "path": "/php/api/listingtype/",
       "proxyUrl": "https://breadbasketapp.com/php/api/listingtype/"
+    },
+    {
+    	"path": "/php/controllers/sign-up-controller.php",
+    	"proxyUrl": "https://breadbasketapp.com/php/controllers/sign-up-controller.php"
     }
   ]
 }

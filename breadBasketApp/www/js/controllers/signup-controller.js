@@ -13,23 +13,17 @@ app.controller("SignupController", ["$scope", "$ionicLoading", "$uibModal", "$wi
 	//		}
 	//	});
 	//	signupModalInstance.result.then(function (signupData) {
-		$scope.openSignupModal = function(data) {
-			$ionicLoading.sho();
+		$scope.submitSignupData = function(data) {
+			//$ionicLoading.show();
 			$scope.signupData = data;
 			SignupService.signup(data)
 					.then(function(reply) {
 						if(reply.status === 200) {
 							AlertService.addAlert({type: "success", msg: reply.message});
-							if(signupData.orgType === "G") {
-								$state.go("tab.dashboard");
-							} else if(signupData.orgType === "R") {
-								$state.go("tab.dashboard");
-							}
+							$state.go("tab.dashboard");
 						} else {
 							AlertService.addAlert({type: "danger", msg: reply.message});
 						}
 					});
-		}, function() {
-			$scope.signupData = {};
-	};
+		};
 }]);
