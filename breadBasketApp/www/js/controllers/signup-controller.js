@@ -1,4 +1,4 @@
-app.controller("SignupController", ["$scope", "ionicLoading", "$uibModal", "$window", "$state", "AlertService", "SignupService", function($scope, $ionicLoading, $uibModal, $window, $state, AlertService, SignupService) {
+app.controller("SignupController", ["$scope", "$ionicLoading", "$uibModal", "$window", "$state", "AlertService", "SignupService", function($scope, $ionicLoading, $uibModal, $window, $state, AlertService, SignupService) {
 	//$scope.signupData = {};
 	$scope.alerts = [];
 
