@@ -2,6 +2,9 @@ app.controller("SignoutController", ["$scope", "$state", "SignoutService", "$win
 
 	$scope.signOut = function() {
 		SignoutService.signout();
-		$state.go('tab.login');
+		$state.go('login');
+
 	}
+
+
 }]);

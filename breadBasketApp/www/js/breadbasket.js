@@ -1,4 +1,4 @@
-var app = angular.module("BreadBasket", ["ionic", "ngMessages", "ngPassword", "ui.bootstrap", "doowb.angular-pusher"])
+var app = angular.module("BreadBasket", ["ionic", "ngMessages", "ngPassword", "doowb.angular-pusher"])
 
 
 	.run(function($ionicPlatform) {
@@ -120,6 +120,7 @@ var app = angular.module("BreadBasket", ["ionic", "ngMessages", "ngPassword", "u
 						}
 					}
 				})
+
 				.state('tab.tab-claim-details', {
 					url: '/claim-details/:listingId',
 					views: {

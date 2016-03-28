@@ -6,10 +6,17 @@
       "path": "/php/controllers/sign-in-controller.php",
       "proxyUrl": "https://breadbasketapp.com/php/controllers/sign-in-controller.php"
     },
+
+    {
+		"path": "/php/controllers/sign-out-controller.php",
+		"proxyUrl": "https://breadbasketapp.com/php/controllers/sign-out-controller.php"
+    },
+
     {
       "path": "/php/api/organization/",
       "proxyUrl": "https://breadbasketapp.com/php/api/organization/"
     },
+
     {
       "path": "/php/api/volunteer/",
       "proxyUrl": "https://breadbasketapp.com/php/api/volunteer/"
