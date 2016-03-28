@@ -1,9 +1,8 @@
-app.controller("ListingController", ["$scope", "ListingService", "AlertService", "GetCurrentService", "OrganizationService", "ListingTypeService", "VolunteerService", "Pusher", function($scope, ListingService, AlertService, GetCurrentService, OrganizationService, ListingTypeService, VolunteerService, Pusher) {
+app.controller("ListingController", ["$scope", "$state", "ListingService", "AlertService", "GetCurrentService", "OrganizationService", "ListingTypeService", "VolunteerService", "Pusher", function($scope, $state, ListingService, AlertService, GetCurrentService, OrganizationService, ListingTypeService, VolunteerService, Pusher) {
 	$scope.editedListing = {};
 	$scope.organization = {};
 	$scope.listingType = {};
 	$scope.volunteer = {};
-	$scope.newListing = {listingId: null, listingMemo: "", listingCost: "", listingType: ""};
 	$scope.alerts = [];
 	$scope.listings = [];
 
@@ -15,28 +14,26 @@ app.controller("ListingController", ["$scope", "ListingService", "AlertService",
 	 * opens new listing modal and adds sends listing to the listing API
 	 */
 
-	$scope.openListingModal = function() {
-		var ListingModalInstance = $uibModal.open({
-			templateUrl: "../../js/views/newlisting-modal.php",
-			controller: "ListingModal",
-			resolve: {
-				listing: function() {
-					return ($scope.listings);
-				}
-			}
-		});
-		ListingModalInstance.result.then(function(listing) {
+		//opens the new volunteer view
+	$scope.openNewListing = function() {
+		$state.go('tab.listing-new');
+
+	};
+
+
+	$scope.newListing = function(listing) {
 			ListingService.create(listing)
 				.then(function(result) {
+					console.log(result);
 					if(result.data.status === 200) {
-						$scope.alerts[0] = {type: "success", msg: result.data.message};
+						$state.go('tab.listings', {reload: true});
 					} else {
 						$scope.alerts[0] = {type: "danger", msg: result.data.message};
 					}
 				});
 
-		});
-	};
+		};
+
 
 	/**
 	 * START METHOD UPDATE/PUT

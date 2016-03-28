@@ -29,6 +29,7 @@ var app = angular.module("BreadBasket", ["ionic", "ngMessages", "ngPassword", "u
 					templateUrl: 'js/templates/sign-up.html',
 					controller: 'SignupController'
 				})
+
 				.state('tab', {
 					url: '/tab',
 					abstract: true,
@@ -100,11 +101,22 @@ var app = angular.module("BreadBasket", ["ionic", "ngMessages", "ngPassword", "u
 						}
 					}
 				})
+
+				.state('tab.listing-new', {
+					url: '/listings',
+					views: {
+						'tab-listings': {
+							templateUrl: 'js/templates/listing-new.html',
+							controller: 'ListingController'
+						}
+					}
+				})
 				.state('tab.dashboard', {
 					url: '/dashboard',
 					views: {
 						'tab-dashboard': {
-							templateUrl: 'js/templates/tab-dashboard.html'
+							templateUrl: 'js/templates/tab-dashboard.html',
+							controller: 'SignoutController'
 						}
 					}
 				})

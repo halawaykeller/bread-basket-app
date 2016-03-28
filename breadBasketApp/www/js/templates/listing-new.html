@@ -1,0 +1,31 @@
+<!--
+  This template loads for the 'tab.volunteer-new' state (breadbasket.js)
+  it's also a form that submits post/create data back to the volunteer service
+-->
+<ion-view view-title="Listing">
+	<ion-content class="padding">
+		<div class="list">
+
+			<label class="item item-input item-floating-label">
+				<span class="input-label">Description</span>
+				<input ng-model="listing.listingMemo" type="text" placeholder="Please Enter A Description">
+			</label>
+
+			<label class="item item-input item-floating-label">
+				<span class="input-label">Approximate Cost</span>
+				<input ng-model="listing.listingCost" type="text" placeholder="Please Enter An Estimated Cost">
+			</label>
+
+
+			<ion-list>
+				<ion-radio ng-model="listing.listingTypeId" ng-value="1">Perishable</ion-radio>
+				<ion-radio ng-model="listing.listingTypeId" ng-value="2">Non-Perishable</ion-radio>
+			</ion-list>
+
+		</div>
+		<button class="button button-full button-positive" ng-click="newListing(listing);">
+			Submit
+		</button>
+
+	</ion-content>
+</ion-view>
