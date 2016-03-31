@@ -1,4 +1,4 @@
-app.controller("OrganizationController", ["$scope", "$state", "OrganizationService", "GetCurrentService", "$uibModal",  function($scope, $state, OrganizationService, GetCurrentService, $uibModal) {
+app.controller("OrganizationController", ["$scope", "$state", "OrganizationService", "GetCurrentService",  function($scope, $state, OrganizationService, GetCurrentService) {
 	//add as needed
 
 	//the organization for the view will be the first element in this array
@@ -181,13 +181,3 @@ app.controller("OrganizationController", ["$scope", "$state", "OrganizationServi
 	//	console.log('shapes', map.shapes);
 	//});
 }]);
-
-//modal instance controller for deletion prompt
-var ModalInstanceCtrl = function($scope, $uibModalInstance) {
-	$scope.yes = function() {
-		$uibModalInstance.close();
-	};
-	$scope.no = function() {
-		$uibModalInstance.dismiss('cancel');
-	};
-};
