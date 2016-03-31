@@ -17,31 +17,24 @@
 		</a>
 
 
-		<ion-list show-delete="shouldShowDelete">
+		<ion-list show-delete="shouldShowDelete" can-swipe="listCanSwipe">
 
-			<!--This is the table headers-->
-			<div class="bar-header button-bar">
-				<a class="button button-dark button-clear">
-					Description</a>
-				<a class="button button-clear button-dark">Date Posted</a>
-				<a class="button button-clear button-dark">Status</a>
-			</div>
 			<!--divider-->
 			<div class="item item-divider">
 				Listings
 			</div>
 
 			<!--listings-->
-			<ion-item class="item item-button-right" ng-repeat="listing in listings| orderBy: '-listingPostTime'" type="item-text-wrap" ng-href={{chooseView(listing.listingId,listing.listingClaimedBy)}}>
+			<ion-item class="list card" ng-repeat="listing in listings| orderBy: '-listingPostTime'" type="item-text-wrap" ng-href={{chooseView(listing.listingId,listing.listingClaimedBy)}}>
 				<h2>{{ listing.listingMemo }}</h2>
 				<p>{{ listing.listingPostTime | date : 'short' }}</p>
 
-				<button class="button button-balanced" ng-hide="listing.listingClaimedBy || currentOrg.orgType==='G'">
+				<ion-option-button class="button button-balanced" ng-hide="listing.listingClaimedBy || currentOrg.orgType ==='G'">
 					VIEW
-				</button>
-				<button class="button button-energized" ng-show="listing.listingClaimedBy">
+				</ion-option-button>
+				<ion-option-button class="button button-energized" ng-show="listing.listingClaimedBy">
 					CLAIMED
-				</button>
+				</ion-option-button>
 
 				<ion-delete-button class="ion-minus-circled" ng-click="deleteListing(listing.listingId, listings.indexOf(listing));"></ion-delete-button
 			</ion-item>

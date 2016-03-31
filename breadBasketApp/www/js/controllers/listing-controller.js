@@ -8,7 +8,7 @@ app.controller("ListingController", ["$scope", "$state", "ListingService", "Aler
 
 	$scope.currentOrg = {};
 
-
+	$scope.listCanSwipe = true;
 	/**
 	 * START METHOD: CREATE/POST
 	 * opens new listing modal and adds sends listing to the listing API
