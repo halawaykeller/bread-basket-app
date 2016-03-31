@@ -42,17 +42,12 @@ app.controller("SigninController", ["$scope", "$ionicLoading", "$window", "$stat
 
 					} else {
 						$scope.alerts[0] = {type: "danger", msg: result.message};
-						$scope.openSigninFailModal();
+						console.log(result);
+
 					}
 				});
 		}, function() {
 			$scope.signinData = {};
 		};
 
-	$scope.openSigninFailModal = function() {
-		var SignInFailInstance = $uibModal.open({
-			templateUrl: "../../js/views/signin-fail-modal.php",
-			controller: "SigninFailModal"
-		});
-	}
 }]);

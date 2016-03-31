@@ -7,13 +7,13 @@
 
 //"signupService refers to what's in the signup-controller.
 app.service("SignupService", function($http) {
-	this.SIGNUP_ENDPOINT = "https://breadbasketapp.com/php/controllers/sign-up-controller.php";//this is the php sign-up-controller
-	this.GET_ENDPOINT = "https://breadbasketapp.com/php/controllers/landing-controller.php";
+	var SIGNUP_ENDPOINT = "https://breadbasketapp.com/php/controllers/sign-up-controller.php";//this is the php sign-up-controller
+	var GET_ENDPOINT = "https://breadbasketapp.com/php/controllers/landing-controller.php";
 
 	this.signup = function(signupData) { //signupData from the signup-controller and signup-modal
-		return ($http.get(this.GET_ENDPOINT))
+		return ($http.get(GET_ENDPOINT))
 				.then(function() {
-					return ($http.post(this.SIGNUP_ENDPOINT, signupData)
+					return ($http.post(SIGNUP_ENDPOINT, signupData)
 							.then(function(reply) {
 								return (reply.data);
 							}));
