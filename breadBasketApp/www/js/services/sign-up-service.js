@@ -13,7 +13,7 @@ app.service("SignupService", function($http) {
 	this.signup = function(signupData) { //signupData from the signup-controller and signup-modal
 		return ($http.get(this.GET_ENDPOINT))
 				.then(function() {
-					return ($http.post(SIGNUP_ENDPOINT, signupData)
+					return ($http.post(this.SIGNUP_ENDPOINT, signupData)
 							.then(function(reply) {
 								return (reply.data);
 							}));

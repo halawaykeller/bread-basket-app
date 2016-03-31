@@ -14,7 +14,7 @@ app.service("SigninService", function($http){
 		//make request to the landing controller to get the xsrf token
 		return($http.get(this.GET_ENDPOINT))
 				.then(function (){
-					return($http.post(SIGNIN_ENDPOINT, signinData)
+					return($http.post(this.SIGNIN_ENDPOINT, signinData)
 							.then(function(reply) {
 								return(reply.data);
 							}));
