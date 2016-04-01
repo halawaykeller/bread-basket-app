@@ -26,15 +26,15 @@
 		<ion-list show-delete="shouldShowDelete" can-swipe="listCanSwipe">
 
 
-			<ion-item class="list card" ng-repeat="listing in listings| orderBy: '-listingPostTime'" type="item-text-wrap">
+			<ion-item class="list card" ng-repeat="listing in listings| orderBy: '-listingPostTime'" type="item-text-wrap" ng-href={{chooseView(listing.listingId,listing.listingClaimedBy)}}>
 
 				<h2>{{ listing.listingMemo }}</h2>
 				<p>{{ listing.listingPostTime | date : 'short' }}</p>
 
 				<ion-option-button class="button button-balanced" ng-hide="listing.listingClaimedBy || currentOrg.orgType ==='G'">
-					<a ng-href={{chooseView(listing.listingId,listing.listingClaimedBy)}}>VIEW</a>
+					VIEW
 				</ion-option-button>
-				<ion-option-button class="button button-energized" ng-show="listing.listingClaimedBy" ng-href={{chooseView(listing.listingId,listing.listingClaimedBy)}}>
+				<ion-option-button class="button button-energized" ng-show="listing.listingClaimedBy">
 					CLAIMED
 				</ion-option-button>
 
