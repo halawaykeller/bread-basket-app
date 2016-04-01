@@ -22,11 +22,11 @@ app.controller("ListingController", ["$scope", "$state", "ListingService", "Aler
 
 
 	$scope.newListing = function(listing) {
-			ListingService.create(listing)
+		ListingService.create(listing)
 				.then(function(result) {
 					console.log(result);
 					if(result.data.status === 200) {
-						$state.go('tab.listings', {reload: true});
+						$state.go('tab.listings', {cache: false});
 					} else {
 						$scope.alerts[0] = {type: "danger", msg: result.data.message};
 					}
