@@ -1,9 +1,10 @@
-app.controller("VolunteerController", ["$scope", "$state", "$ionicListDelegate", "VolunteerService", "AlertService", "$ionicModal", function($scope, $state, $ionicListDelegate, VolunteerService, $ionicModal) {
+app.controller("VolunteerController", ["$scope", "$state", "$ionicListDelegate", "VolunteerService", "GetCurrentService", function($scope, $state, $ionicListDelegate, VolunteerService, GetCurrentService) {
 	$scope.index = null;
 	$scope.alerts = [];
 	$scope.volunteers = [];
 
 	$scope.shouldShowDelete = false;
+	$scope.currentOrgType = null;
 
 	/** shows delete buttons in ion list **/
 
@@ -11,6 +12,17 @@ app.controller("VolunteerController", ["$scope", "$state", "$ionicListDelegate",
 		$ionicListDelegate.showDelete(true);
 
 	};
+
+	getCurrentOrgType();
+	function getCurrentOrgType() {
+		GetCurrentService.fetchOrgCurrent().then(function(result){
+			if (result.data.status === 200) {
+				$scope.currentOrgType = result.data.data.orgType;
+			} else {
+				//$scope.alerts[0] = {type: "danger", msg: result.data.message};
+			}
+		});
+	}
 
 	/**
 	 * START METHOD: CREATE/POST

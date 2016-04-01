@@ -2,15 +2,17 @@
 
 
 	<ion-content class="padding">
-		<ion-toggle ng-model="shouldShowDelete">
-			Show Delete?
-		</ion-toggle>
+		<div ng-show="currentOrgType==='R'">
+			<ion-toggle ng-model="shouldShowDelete">
+				Show Delete?
+			</ion-toggle>
 
-		<!--add new volunteer-->
-		<a class="item item-icon-right" ng-click="openNewVolunteer();"> New Volunteer
-			<i class="icon ion-chevron-right icon-accessory"></i>
-		</a>
-		<hr />
+			<!--add new volunteer-->
+			<a class="item item-icon-right" ng-click="openNewVolunteer();"> New Volunteer
+				<i class="icon ion-chevron-right icon-accessory"></i>
+			</a>
+			<hr />
+		</div>
 
 			<!--volunteers list-->
 		<!--Shows the volunteers in that organization-->
