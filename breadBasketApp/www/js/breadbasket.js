@@ -74,7 +74,7 @@ var app = angular.module("BreadBasket", ["ionic", "ngMessages", "ngPassword", "d
 				})
 
 				.state('tab.volunteer-new', {
-					url: '/volunteers/volunteer-new',
+					url: '/volunteers',
 					views: {
 						'tab-volunteers': {
 							templateUrl: 'js/templates/volunteer-new.html',

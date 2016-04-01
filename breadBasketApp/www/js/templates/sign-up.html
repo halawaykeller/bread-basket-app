@@ -1,11 +1,11 @@
 <ion-pane>
+    <ion-nav-view>
     <ion-header-bar class="bar-stable">
         <h1 class="title">Bread Basket</h1>
     </ion-header-bar>
-    <ion-content class="padding opening-food-pic">
+    <ion-content class="padding">
         <!--Hello text-->
-        <h3>Join the Bread Basket movement!</h3>
-        <h4> Sign up today and join the Bread Basket movement.</h4>
+        <h4 class="login padding text-center">Join the Bread Basket movement!</h4>
 
         <!--SIGN UP FORM BEGINS-->
         <div class="list list-inset">
@@ -73,7 +73,8 @@
                     <option value="R">We are a shelter or food bank needing donations.</option>
                 </select>
             </div>
-            <button ng-click="submitSignupData(signupData);" class="button button-block">Submit</button>
             </div>
+        <button ng-click="submitSignupData(signupData);" class="button button-block">Submit</button>
     </ion-content>
+    </ion-nav-view>
 </ion-pane>

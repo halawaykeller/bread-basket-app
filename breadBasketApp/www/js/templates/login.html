@@ -1,13 +1,13 @@
 <ion-pane>
     <ion-view class="navbar header">
+        <ion-content>
         <div class="padding">
             <!--Hello text-->
 
 
 
-            <div class="text-center">
-                <h2>Bread Basket</h2>
-                <h4>Connecting people to end hunger</h4>
+            <div class="login text-center">
+                <h3 class="login">Connecting people to end hunger.</h3>
             </div>
                 <!--LOGIN PAGE BEGINS-->
                 <div class="list list-inset">
@@ -21,9 +21,10 @@
             <button ng-controller="SigninController" ng-click="submitSigninData(signinData);"
                     class="button button-block">Submit
             </button>
-            <div class="text-center">
+            <div class="text-center padding">
                 <a class="text-center" href="#/sign-up">Sign up today!</a>
             </div>
         </div>
+        </ion-content>
     </ion-view>
 </ion-pane>
