@@ -3,22 +3,25 @@
 	<!--Listings-->
 
 	<ion-content class="padding">
+		<div ng-show="currentOrg.orgType === 'G'">
+			<ion-toggle ng-model="shouldShowDelete">
+				Show Delete?
+			</ion-toggle>
 
-		<ion-toggle ng-model="shouldShowDelete">
-			Show Delete?
-		</ion-toggle>
+			<!--add new listing-->
+			<a class="item item-icon-right" ng-click="openNewListing();"> New Listing
+				<i class="icon ion-chevron-right icon-accessory"></i>
+			</a>
 
-		<!--add new listing-->
-		<a class="item item-icon-right" ng-click="openNewListing();"> New Listing
-			<i class="icon ion-chevron-right icon-accessory"></i>
-		</a>
-
+		<!--listings-->
+		<hr />
+		</div>
 
 		<ion-list show-delete="shouldShowDelete" can-swipe="listCanSwipe">
 
 
-			<!--listings-->
-<hr />
+
+
 			<ion-item class="list card" ng-repeat="listing in listings| orderBy: '-listingPostTime'" type="item-text-wrap" ng-href={{chooseView(listing.listingId,listing.listingClaimedBy)}}>
 
 				<h2>{{ listing.listingMemo }}</h2>
@@ -31,7 +34,7 @@
 					CLAIMED
 				</ion-option-button>
 
-				<ion-delete-button class="ion-minus-circled" ng-click="deleteListing(listing.listingId, listings.indexOf(listing));"></ion-delete-button
+				<ion-delete-button class="ion-minus-circled" ng-click="deleteListing(listing.listingId, listings.indexOf(listing));"></ion-delete-button>
 			</ion-item>
 
 		</ion-list>
