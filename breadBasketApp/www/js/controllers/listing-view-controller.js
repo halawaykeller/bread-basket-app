@@ -47,7 +47,7 @@ app.controller("ListingViewController", ["$scope", "$stateParams", "ListingServi
     $scope.claimListing = function(){
         //get current organization ID
         var listing = $scope.listing;
-        listing.listingClaimedBy = orgCurrent;
+        listing.listingClaimedBy = orgCurrent.orgId;
         ListingService.update(listing.listingId, listing)
            .then(function(result) { //need some form of positive feedback here, since alerts don't work
                if(result.data.status === 200) {
