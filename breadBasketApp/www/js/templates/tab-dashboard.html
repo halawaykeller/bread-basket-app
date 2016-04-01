@@ -3,31 +3,35 @@
 		<div class="card">
 			<div class="item item-text-wrap">
 				<h2 class="text-center">Welcome to your account!</h2>
-				<h2 class="text-center">Choose the listing, volunteers or organization tab below.</h2>
+				<h4 class="text-center">Choose the listing, volunteers or organization tab below.</h4>
 
-			</div>
-			<div class="card">
-				<div class="item item-text-wrap">
-						<h4>Food Provider</h4>
-
-						<div class="padding-left">
-							<div><i class="ion-soup-can-outline"></i> &nbsp;Create a New Listing</div>
-							<div><i class="ion-clock"></i> &nbsp;Wait for a Volunteer to claim it</div>
-							<div><i class="ion-arrow-swap"></i> &nbsp;Pass off the donation</div>
-						</div>
-
-						<h4>Food Receiver</h4>
-
-						<div class="padding-left">
-							<div><i class="ion-document-text"></i> &nbsp;View all Listings</div>
-							<div><i class="ion-checkmark-circled"></i> &nbsp;Claim a Listing</div>
-							<div><i class="ion-android-car"></i> &nbsp;Pick up the Listing</div>
-							<p></p>
-						</div>
-
-				</div>
 			</div>
 		</div>
-		<button class="button button-positive" ng-controller="SignoutController" ng-click="signOut();">Sign Out</button>
+
+		<div class="card">
+			<div class="item item-divider">
+				I'm a Food Provider!
+			</div>
+			<div class="item item-text-wrap">
+					<div><i class="ion-soup-can-outline"></i> &nbsp;Create a New Listing</div>
+					<div><i class="ion-clock"></i> &nbsp;Wait for a Volunteer to claim it</div>
+					<div><i class="ion-arrow-swap"></i> &nbsp;Pass off the donation</div>
+			</div>
+		</div>
+
+		<div class="card">
+			<div class="item item-divider">
+				I'm a Food Reciever!
+			</div>
+			<div class="item item-text-wrap">
+				<div><i class="ion-document-text"></i> &nbsp;View all Listings</div>
+				<div><i class="ion-checkmark-circled"></i> &nbsp;Claim a Listing</div>
+				<div><i class="ion-android-car"></i> &nbsp;Pick up the Listing</div>
+			</div>
+		</div>
+
+
+
+		<button class="button button-block" ng-controller="SignoutController" ng-click="signOut();">Sign Out</button>
 	</ion-content>
 </ion-view>

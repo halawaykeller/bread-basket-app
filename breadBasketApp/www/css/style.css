@@ -1,1 +1,33 @@
 /* Empty. Add your own CSS if you like */
+
+
+.pane {
+	background-image: url(../img/food-ingredients-high.jpg);
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	background-position: center;
+}
+
+.navbar {
+	background-color: darkslategray;
+	color: whitesmoke;
+}
+
+.item-floating-label {
+	background-color: whitesmoke;
+}
+
+.button {
+	background-color: darkslategray;
+	color: whitesmoke;
+}
+
+.card {
+	background-color: whitesmoke;
+}
+
+.tabs-color-active-breadbasket {
+	color: darkslategray;
+
+}

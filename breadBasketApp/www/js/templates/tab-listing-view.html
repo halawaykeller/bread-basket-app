@@ -1,37 +1,35 @@
 <ion-view view-title="Listing Details">
 	<ion-content class="padding">
-		<h3>
-			{{listing.listingMemo}}
-		</h3>
 
-		<h3>
-			Posted On: {{listing.listingPostTime | date: 'short'}}
-		</h3>
+		<div class="padding card">
 
-		<h3>
-			{{listingType.listingTypeInfo}}
-		</h3>
+			<h4>Details</h4>
+			<p>{{listing.listingMemo}}</p>
 
-		<h3>
-			Location: {{organization.orgAddress1}} {{organization.orgAddress2}} {{organization.orgCity}}
-			{{organization.orgState}} {{organization.orgZip}}
-		</h3>
+			<p>Posted On: {{listing.listingPostTime | date: 'short'}}</p>
+			<p>
+				{{listingType.listingTypeInfo}}
+			</p>
 
-		<h3>
-			Hours: {{organization.orgHours}}
-		</h3>
-
-		<h3>
-			Phone: {{organization.orgPhone}}
-		</h3>
-
+			<h4>Pickup Information</h4>
+			<p>
+				Location: {{organization.orgAddress1}} {{organization.orgAddress2}} {{organization.orgCity}}
+				{{organization.orgState}} {{organization.orgZip}}
+			</p>
+			<p>
+				Hours: {{organization.orgHours}}
+			</p>
+			<p>
+				Phone: {{organization.orgPhone}}
+			</p>
+		</div>
 		<div ng-hide="returnCurrentOrgType()==='G'">
 			<!--ng-hide this and show a "listing claimed" button after claiming-->
-			<button ng-hide="listing.listingClaimedBy" class="button button-balanced" ng-click="claimListing();">Claim
+			<button ng-hide="listing.listingClaimedBy" class="button button-block button-balanced" ng-click="claimListing();">Claim
 				Listing
 			</button>
 			<div ng-if="listing.listingClaimedBy === returnCurrentOrgId();">
-				<button ng-show="listing.listingClaimedBy" class="button button-energized" ng-click="unclaimListing();">
+				<button ng-show="listing.listingClaimedBy" class="button button-block button-energized" ng-click="unclaimListing();">
 					Unclaim Listing
 				</button>
 			</div>

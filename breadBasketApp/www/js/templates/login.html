@@ -1,16 +1,14 @@
 <ion-pane>
     <ion-view class="navbar header">
-        <ion-content class="padding">
+        <div class="padding">
             <!--Hello text-->
+
+
+
             <div class="text-center">
                 <h2>Bread Basket</h2>
                 <h4>Connecting people to end hunger</h4>
             </div>
-
-
-                <!--href="sign-up.html"-->
-
-
                 <!--LOGIN PAGE BEGINS-->
                 <div class="list list-inset">
                     <label class="item item-input">
@@ -19,15 +17,13 @@
                     <label class="item item-input">
                         <input type="password" ng-model="signinData.password" placeholder="Password">
                     </label>
-                    <button ng-controller="SigninController" ng-click="submitSigninData(signinData);"
-                            class="button button-block button-positive">Submit
-                    </button>
                 </div>
+            <button ng-controller="SigninController" ng-click="submitSigninData(signinData);"
+                    class="button button-block">Submit
+            </button>
             <div class="text-center">
                 <a class="text-center" href="#/sign-up">Sign up today!</a>
             </div>
-
-
-        </ion-content>
+        </div>
     </ion-view>
 </ion-pane>

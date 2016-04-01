@@ -10,15 +10,12 @@
 		<a class="item item-icon-right" ng-click="openNewVolunteer();"> New Volunteer
 			<i class="icon ion-chevron-right icon-accessory"></i>
 		</a>
-		<!--divider-->
-		<div class="item item-divider">
-			Volunteers
-		</div>
+		<hr />
 
 			<!--volunteers list-->
 		<!--Shows the volunteers in that organization-->
 		<ion-list show-delete="shouldShowDelete">
-			<ion-item class="item item-icon-right" ng-repeat="volunteer in volunteers" type="item-text-wrap" href="#tab/volunteers/{{volunteer.volId}}">
+			<ion-item class="list card item item-icon-right" ng-repeat="volunteer in volunteers" type="item-text-wrap" href="#tab/volunteers/{{volunteer.volId}}">
 
 				<h2>{{volunteer.volFirstName}} {{volunteer.volLastName}}</h2>
 				<i class="icon ion-chevron-right icon-accessory"></i>
