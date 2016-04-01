@@ -5,7 +5,7 @@
  * contributing code from Misquote @author Dylan McDonald
  */
 
-app.constant("LISTINGTYPE_ENDPOINT", "/php/api/listingtype/");
+app.constant("LISTINGTYPE_ENDPOINT", "https://breadbasketapp.com/php/api/listingtype/");
 app.service("ListingTypeService", function($http, LISTINGTYPE_ENDPOINT) {
 
 	//internal function for holding the url

@@ -1,4 +1,4 @@
-app.constant("ORGANIZATION_ENDPOINT", "/php/api/organization/");
+app.constant("ORGANIZATION_ENDPOINT", "https://breadbasketapp.com/php/api/organization/");
 app.service("OrganizationService", function($http, ORGANIZATION_ENDPOINT) {
 	//internal function for holding the url
 	function getUrl() {
