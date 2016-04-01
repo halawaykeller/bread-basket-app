@@ -1,19 +1,21 @@
 <ion-view view-title="Claim Details">
 	<ion-content class="padding">
 
-		<div class="card">
-			<h3>
-				{{listing.listingMemo}}
-			</h3>
-			<h3>
-				Organization: {{organization.orgName}}
-			</h3>
-			<h3>
+		<div class="padding card">
+
+			<h4>A Volunteer Is On The Way!</h4>
+			<p>
+				Listing: {{listing.listingMemo}}
+			</p>
+			<p>
+				Volunteer Organization: {{organization.orgName}}
+			</p>
+			<p>
 				Location: {{organization.orgAddress1}} {{organization.orgAddress2}} {{organization.orgCity}}, {{organization.orgState}} {{organization.orgZip}}
-			</h3>
-			<h3>
+			</p>
+			<p>
 				Phone: {{organization.orgPhone}}
-			</h3>
+			</p>
 
 		</div>
 	</ion-content>

@@ -32,7 +32,7 @@
 				<p>{{ listing.listingPostTime | date : 'short' }}</p>
 
 				<ion-option-button class="button button-balanced" ng-hide="listing.listingClaimedBy || currentOrg.orgType ==='G'">
-					VIEW
+					AVAILABLE
 				</ion-option-button>
 				<ion-option-button class="button button-energized" ng-show="listing.listingClaimedBy">
 					CLAIMED
